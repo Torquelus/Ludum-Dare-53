@@ -11,15 +11,11 @@ config_version=5
 [application]
 
 config/name="Ludum Dare 53"
-run/main_scene="res://scenes/menus_and_gui/main_menu.tscn"
+run/main_scene="res://scenes/moveboxesonscale.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
-<<<<<<<HEADrun/main_scene="res://scenes/main_menu.tscn"
-
-[autoload]
-
-SceneTransition="*res://scenes/menus_and_gui/scene_transition.tscn"
-Volume="*res://scripts/menu_and_gui/volume.gd"
+"<<<<<<<HEAD[layer_names]3d_physics/layer_1"="Environment"
+3d_physics/layer_2="Player Box"
+3d_physics/layer_3="Player Ball"
 
 [input]
 
@@ -52,15 +48,13 @@ jump={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
 ]
 }
-pause={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"echo":false,"script":null)
-]
-}
 
 [layer_names]
 
 3d_physics/layer_1="Environment"
 3d_physics/layer_2="Player Box"
 3d_physics/layer_3="Player Ball"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
