@@ -1,63 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://qfwd00wxp2x7"]
+[gd_scene load_steps=2 format=3 uid="uid://qfwd00wxp2x7"]
 
-[ext_resource type="Script" path="res://scripts/playerball.gd" id="1_cxga4"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dh1m8"]
-size = Vector3(1, 0.03, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdjq6"]
-albedo_color = Color(0.752941, 0.282353, 0.286275, 0.72549)
-refraction_scale = 0.01
-
-[sub_resource type="BoxMesh" id="BoxMesh_ldj57"]
-material = SubResource("StandardMaterial3D_jdjq6")
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_7df2l"]
-radius = 0.25
-
-[sub_resource type="SphereMesh" id="SphereMesh_ira3g"]
-radius = 0.25
-height = 0.5
+[ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_kwmte"]
 
 [node name="Node3D" type="Node3D"]
-
-[node name="Hollow Box" type="RigidBody3D" parent="."]
-
-[node name="Top" type="CollisionShape3D" parent="Hollow Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_dh1m8")
-
-[node name="Bottom" type="CollisionShape3D" parent="Hollow Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_dh1m8")
-
-[node name="Front" type="CollisionShape3D" parent="Hollow Box"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
-shape = SubResource("BoxShape3D_dh1m8")
-
-[node name="Back" type="CollisionShape3D" parent="Hollow Box"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.5)
-shape = SubResource("BoxShape3D_dh1m8")
-
-[node name="Left" type="CollisionShape3D" parent="Hollow Box"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.5, 0, 0)
-shape = SubResource("BoxShape3D_dh1m8")
-
-[node name="Right" type="CollisionShape3D" parent="Hollow Box"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
-shape = SubResource("BoxShape3D_dh1m8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Hollow Box"]
-mesh = SubResource("BoxMesh_ldj57")
-
-[node name="Player" type="RigidBody3D" parent="."]
-script = ExtResource("1_cxga4")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("SphereShape3D_7df2l")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("SphereMesh_ira3g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)
@@ -67,8 +12,18 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.21241, 0)
-size = Vector3(11.4147, 1, 11.444)
+size = Vector3(20.4259, 1, 11.444)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, 0)
+size = Vector3(2.27781, 1.12554, 4.17471)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79564, -0.18866, 0)
+size = Vector3(2.27781, 1.12554, 4.17471)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
 shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_kwmte")]
