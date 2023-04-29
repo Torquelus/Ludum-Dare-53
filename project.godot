@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="Ludum Dare 53"
-run/main_scene="res://scenes/3dboxtestscene.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Volume="*res://scripts/Volume.gd"
