@@ -20,10 +20,6 @@ size = Vector3(20.4259, 1, 11.444)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, 0)
 size = Vector3(2.27781, 1.12554, 4.17471)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79564, -0.18866, 0)
-size = Vector3(2.27781, 1.12554, 4.17471)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
 shadow_enabled = true
@@ -31,6 +27,4 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_twa4a")]
 
 [node name="Conveyor" parent="." instance=ExtResource("2_l1foq")]
-
-[connection signal="applyConveyorForce" from="Conveyor" to="Player" method="_on_apply_conveyor_force"]
-[connection signal="disableConveyorForce" from="Conveyor" to="Player" method="_on_disable_conveyor_force"]
+conveyor_direction = Vector3(0, 0, -1)
