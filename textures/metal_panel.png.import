@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b24sx0pv15qtt"
-path="res://.godot/imported/box_Text Box Texture Labelled.png-9a360b088d30ef409f9a71ea899cd49a.ctex"
+uid="uid://bajyqtgho7ypy"
+path.s3tc="res://.godot/imported/metal_panel.png-385d993e5ab408b08d777e09b6dc8c4f.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://models/box/box_Text Box Texture Labelled.png"
-dest_files=["res://.godot/imported/box_Text Box Texture Labelled.png-9a360b088d30ef409f9a71ea899cd49a.ctex"]
+source_file="res://textures/metal_panel.png"
+dest_files=["res://.godot/imported/metal_panel.png-385d993e5ab408b08d777e09b6dc8c4f.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -6,9 +6,6 @@
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Button" parent="." instance=ExtResource("4_2y1s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03362, -0.580166, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)
 current = true
