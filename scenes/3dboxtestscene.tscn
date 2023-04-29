@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://qfwd00wxp2x7"]
+[gd_scene load_steps=3 format=3 uid="uid://qfwd00wxp2x7"]
 
 [ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_kwmte"]
+[ext_resource type="PackedScene" uid="uid://b646c8cukpk1a" path="res://scenes/menus_and_gui/gui.tscn" id="2_dcqto"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="GUI" parent="." instance=ExtResource("2_dcqto")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)
