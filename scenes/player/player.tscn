@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://0eqrmj5wilsi"]
+[gd_scene load_steps=8 format=3 uid="uid://0eqrmj5wilsi"]
 
 [ext_resource type="Script" path="res://scenes/player/player_controller.gd" id="1_tfanf"]
-[ext_resource type="PackedScene" uid="uid://cabmxkxmbb6sn" path="res://models/box/box.glb" id="2_whaew"]
+[ext_resource type="Material" uid="uid://cebsv4684c1sw" path="res://materials/player_box.tres" id="2_junws"]
 [ext_resource type="Material" uid="uid://datd2oh32y488" path="res://materials/player_ball.tres" id="3_eawry"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bxfwp"]
 size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ij68"]
+material = ExtResource("2_junws")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iynq1"]
 radius = 0.25
@@ -46,8 +49,8 @@ shape = SubResource("BoxShape3D_bxfwp")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.45, 0, 0)
 shape = SubResource("BoxShape3D_bxfwp")
 
-[node name="Mesh" parent="Box" instance=ExtResource("2_whaew")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box"]
+mesh = SubResource("BoxMesh_8ij68")
 
 [node name="PlayerBall" type="RigidBody3D" parent="."]
 collision_layer = 4
