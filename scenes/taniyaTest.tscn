@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://qfwd00wxp2x7"]
+[gd_scene load_steps=9 format=3 uid="uid://covb3os5wnfd7"]
 
-[ext_resource type="Script" path="res://scripts/playerball.gd" id="1_cxga4"]
+[ext_resource type="Script" path="res://scripts/Hollow Box.gd" id="1_cjt17"]
+[ext_resource type="Script" path="res://scripts/playerball.gd" id="1_oq5xn"]
+[ext_resource type="PackedScene" uid="uid://dp8mhth1eyngm" path="res://scenes/conveyer.tscn" id="2_l1foq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dh1m8"]
 size = Vector3(1, 0.03, 1)
@@ -22,6 +24,9 @@ height = 0.5
 [node name="Node3D" type="Node3D"]
 
 [node name="Hollow Box" type="RigidBody3D" parent="."]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_cjt17")
 
 [node name="Top" type="CollisionShape3D" parent="Hollow Box"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -51,7 +56,9 @@ shape = SubResource("BoxShape3D_dh1m8")
 mesh = SubResource("BoxMesh_ldj57")
 
 [node name="Player" type="RigidBody3D" parent="."]
-script = ExtResource("1_cxga4")
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_oq5xn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("SphereShape3D_7df2l")
@@ -72,3 +79,8 @@ size = Vector3(11.4147, 1, 11.444)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
 shadow_enabled = true
+
+[node name="Conveyer" parent="." instance=ExtResource("2_l1foq")]
+
+[connection signal="applyConveyerForce" from="Conveyer" to="Hollow Box" method="_on_apply_conveyer_force"]
+[connection signal="disableConveyerForce" from="Conveyer" to="Hollow Box" method="_on_disable_conveyer_force"]
