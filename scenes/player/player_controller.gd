@@ -18,6 +18,7 @@ var _force_dir: Vector3 = Vector3.ZERO
 
 ## Rigidbody of player ball.
 @onready var player_ball_rigidbody = $PlayerBall
+@onready var box_rigidbody = $Box
 
 
 func _input(event):
@@ -31,3 +32,10 @@ func _input(event):
 func _physics_process(_delta):
 	if Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() < max_velocity:
 		player_ball_rigidbody.apply_force(_force_dir * push_force, Vector3.ZERO)
+
+func _on_apply_conveyor_force():
+	print("hello")
+
+
+func _on_disable_conveyor_force():
+	print("hello")
