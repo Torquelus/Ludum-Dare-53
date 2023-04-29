@@ -18,6 +18,7 @@ func _process(delta):
 	
 
 func _on_conveyor_area_body_entered(body):
+	print("good")
 	applyConveyorForce.emit(conveyorDirection*conveyorStrength)
 
 
