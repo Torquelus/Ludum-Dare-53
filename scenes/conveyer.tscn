@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp8mhth1eyngm"]
+
+[ext_resource type="Script" path="res://scripts/conveyer.gd" id="1_fqmyc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q721j"]
+size = Vector3(1.5, 1.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgqjr"]
+transparency = 1
+albedo_color = Color(0.588235, 0.992157, 0.568627, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ucobj"]
+material = SubResource("StandardMaterial3D_fgqjr")
+size = Vector3(1.5, 1.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ba3d8"]
+albedo_color = Color(0.239216, 0.239216, 0.239216, 1)
+metallic = 0.56
+metallic_specular = 0.72
+roughness = 0.43
+clearcoat_enabled = true
+clearcoat_roughness = 0.45
+
+[sub_resource type="BoxMesh" id="BoxMesh_ib6qb"]
+material = SubResource("StandardMaterial3D_ba3d8")
+size = Vector3(3, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gaog"]
+size = Vector3(3, 1, 10)
+
+[node name="Conveyer" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85448, 0, 0)
+collision_mask = 2
+script = ExtResource("1_fqmyc")
+
+[node name="ConveyerArea" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConveyerArea"]
+shape = SubResource("BoxShape3D_q721j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ConveyerArea"]
+mesh = SubResource("BoxMesh_ucobj")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ib6qb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4gaog")
+
+[connection signal="body_entered" from="ConveyerArea" to="." method="_on_conveyer_area_body_entered"]
+[connection signal="body_exited" from="ConveyerArea" to="." method="_on_conveyer_area_body_exited"]
