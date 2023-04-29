@@ -8,12 +8,13 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/3dboxtestscene.tscn")
+	#add fade to black or some transition
+	SceneTransition.change_scene("res://scenes/3dboxtestscene.tscn", "dissolve")
 
 
 func _on_options_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_options.tscn")
+	SceneTransition.change_scene("res://scenes/menus_and_gui/main_options.tscn")
 
 
 func _on_quit_button_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
