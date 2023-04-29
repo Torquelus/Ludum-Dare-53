@@ -27,7 +27,3 @@ mesh = SubResource("BoxMesh_ib6qb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_4gaog")
-
-[connection signal="body_entered" from="ConveyorArea" to="." method="_on_conveyor_area_body_entered"]
-[connection signal="body_entered" from="ConveyorArea" to="." method="_on_conveyer_area_body_entered"]
-[connection signal="body_exited" from="ConveyorArea" to="." method="_on_conveyer_area_body_exited"]
