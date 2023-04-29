@@ -14,6 +14,9 @@ config/name="Ludum Dare 53"
 run/main_scene="res://scenes/3dboxtestscene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[layer_names]3d_physics/layer_1"="Environment"
+3d_physics/layer_2="Player Box"
+3d_physics/layer_3="Player Ball"
 
 [input]
 
@@ -52,3 +55,7 @@ jump={
 3d_physics/layer_1="Environment"
 3d_physics/layer_2="Player Box"
 3d_physics/layer_3="Player Ball"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
