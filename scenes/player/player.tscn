@@ -46,7 +46,7 @@ shape = SubResource("BoxShape3D_bxfwp")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.45, 0, 0)
 shape = SubResource("BoxShape3D_bxfwp")
 
-[node name="Mesh" parent="Box" instance=ExtResource("2_whaew")]
+[node name="BoxMesh" parent="Box" instance=ExtResource("2_whaew")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="PlayerBall" type="RigidBody3D" parent="."]
