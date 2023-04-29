@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpgy0y7qkcw8w"]
+[gd_scene load_steps=4 format=3 uid="uid://bai42oopf6kol"]
 
 [ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_twa4a"]
 [ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_l1foq"]
+[ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="4_2y1s6"]
 
-[node name="Node3D2" type="Node3D"]
+[node name="Node3D" type="Node3D"]
+
+[node name="Button" parent="." instance=ExtResource("4_2y1s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03362, -0.580166, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)

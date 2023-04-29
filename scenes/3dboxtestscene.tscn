@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qfwd00wxp2x7"]
 
 [ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_kwmte"]
-[ext_resource type="Environment" uid="uid://bkm4870761n5y" path="res://default_environment.tres" id="2_s2q2v"]
+[ext_resource type="Environment" path="res://default_environment.tres" id="2_s2q2v"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pmu86"]
 

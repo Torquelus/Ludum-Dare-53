@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://do5isyg8q1f"]
+[gd_scene load_steps=9 format=3 uid="uid://d2vru48ambwho"]
 
-[ext_resource type="Script" path="res://scenes/button/button.gd" id="1_gtd3p"]
+[ext_resource type="Script" path="res://scenes/button/button.gd" id="1_bp3jr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6wd8"]
 size = Vector3(1, 0.25, 1)
@@ -63,7 +63,7 @@ size = Vector3(0.75, 0.24, 0.75)
 
 [node name="ButtonPushable" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18851, 0)
-script = ExtResource("1_gtd3p")
+script = ExtResource("1_bp3jr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonPushable"]
 mesh = SubResource("BoxMesh_f8s1s")
