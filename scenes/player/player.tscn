@@ -21,7 +21,7 @@ height = 0.5
 [node name="Player" type="Node3D"]
 script = ExtResource("1_tfanf")
 
-[node name="Box" type="RigidBody3D" parent="."]
+[node name="Box" type="RigidBody3D" parent="." groups=["boxes", "player"]]
 collision_layer = 2
 collision_mask = 5
 
