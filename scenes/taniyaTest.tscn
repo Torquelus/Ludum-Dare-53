@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_l1foq"]
 
 [node name="Node3D" type="Node3D"]
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)
 
