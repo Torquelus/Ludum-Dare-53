@@ -11,13 +11,13 @@ extends Node3D
 ## Amount of force player ball jumps upwards with.
 @export var jump_force = 600.0
 
-
 ## Direction to apply movement force in.
 var _force_dir: Vector3 = Vector3.ZERO
 
 
 ## Rigidbody of player ball.
 @onready var player_ball_rigidbody = $PlayerBall
+@onready var box_rigidbody = $Box
 
 
 func _input(event):
@@ -31,3 +31,5 @@ func _input(event):
 func _physics_process(_delta):
 	if Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() < max_velocity:
 		player_ball_rigidbody.apply_force(_force_dir * push_force, Vector3.ZERO)
+		
+
