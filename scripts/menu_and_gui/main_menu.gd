@@ -13,8 +13,8 @@ func _on_start_button_pressed():
 
 
 func _on_options_button_pressed():
-	SceneTransition.change_scene("res://scenes/main_options.tscn")
+	SceneTransition.change_scene("res://scenes/menus_and_gui/main_options.tscn")
 
 
 func _on_quit_button_pressed():
-	pass # Replace with function body.
+	get_tree().quit()

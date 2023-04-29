@@ -15,7 +15,7 @@ func _process(delta):
 
 
 func _on_menu_button_pressed():
-	SceneTransition.change_scene("res://scenes/main_menu.tscn")
+	SceneTransition.change_scene("res://scenes/menus_and_gui/main_menu.tscn")
 
 #Updates Volume Global variable 
 func _on_h_slider_value_changed(value):

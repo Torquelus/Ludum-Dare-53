@@ -1,3 +1,5 @@
+class_name SceneTransitionClass
+## Class description: Controls the transition animations between Main Menu and other scenes
 extends CanvasLayer
 
 
@@ -5,6 +7,8 @@ extends CanvasLayer
 func change_scene(target: String, type: String = 'fast_dissolve') -> void:
 	if type == 'dissolve':
 		transition_dissolve(target)
+	elif type == 'None':
+		pass
 	else:
 		transition_dissolve_fast(target)
 
