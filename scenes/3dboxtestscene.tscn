@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qfwd00wxp2x7"]
+[gd_scene load_steps=13 format=3 uid="uid://qfwd00wxp2x7"]
 
 [ext_resource type="PackedScene" path="res://scenes/menus_and_gui/gui.tscn" id="1_fymrw"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_kwmte"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ca5w8op6ugdrr" path="res://textures/metal_panel_transparent.png" id="2_m0gxx"]
 [ext_resource type="Environment" uid="uid://kqiadxouiuqo" path="res://default_environment.tres" id="2_s2q2v"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="5_csvti"]
-[ext_resource type="PackedScene" uid="uid://nqbn5qiiuefd" path="res://sounds/ambient/background_audio.tscn" id="6_acfml"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="7_kt8sk"]
 [ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="8_7rtt7"]
 
@@ -72,8 +71,6 @@ material = SubResource("StandardMaterial3D_iyoj5")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_s2q2v")
 camera_attributes = SubResource("CameraAttributesPractical_pmu86")
-
-[node name="BackgroundAudio" parent="." instance=ExtResource("6_acfml")]
 
 [node name="Lighting" type="Node" parent="."]
 

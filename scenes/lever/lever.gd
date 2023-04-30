@@ -25,6 +25,4 @@ func _on_area_3d_body_entered(body):
 func _on_animation_player_animation_finished(anim_name):
 	if pushed == true:
 		lever_pushed.emit()
-		$AudioStreamPlayer1.play(0.1)
-		await $AudioStreamPlayer1.finished
 		process_mode = Node.PROCESS_MODE_DISABLED
