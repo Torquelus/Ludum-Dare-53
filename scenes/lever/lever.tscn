@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2vru48ambwho"]
+[gd_scene load_steps=10 format=3 uid="uid://d2vru48ambwho"]
 
 [ext_resource type="Script" path="res://scenes/lever/lever.gd" id="1_n2lmq"]
+[ext_resource type="AudioStream" uid="uid://dyogip85q74u6" path="res://sounds/lever/lever.wav" id="2_g3vkd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6wd8"]
 size = Vector3(1, 0.25, 1)
@@ -85,6 +86,9 @@ root_node = NodePath("../LeverPushable")
 libraries = {
 "": SubResource("AnimationLibrary_deisq")
 }
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g3vkd")
 
 [connection signal="body_entered" from="LeverPushable/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

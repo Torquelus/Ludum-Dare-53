@@ -41,6 +41,7 @@ focus_neighbor_bottom = NodePath("../StartButton")
 text = "Quit"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 4
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -48,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.866667, 0.623529, 0.435294, 1)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
