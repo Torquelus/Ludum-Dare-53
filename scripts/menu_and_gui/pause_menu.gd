@@ -15,9 +15,6 @@ func _unhandled_input(event):
 		self.is_paused = !is_paused
 		visible = is_paused
 
-func _process(delta):
-	if Input.is_action_pressed("Pause"):
-		visible = not visible
 		
 func _on_resumebutton_pressed():
 	self.is_paused = false
