@@ -18,11 +18,11 @@ albedo_texture = ExtResource("2_m0gxx")
 uv1_triplanar = true
 texture_filter = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_675t8"]
-albedo_color = Color(0.282353, 0.321569, 0.392157, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyoj5"]
 albedo_color = Color(0.368627, 0.235294, 0.247059, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_675t8"]
+albedo_color = Color(0.282353, 0.321569, 0.392157, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pmu86"]
 
@@ -47,19 +47,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32592, 1.8126, -3.89699)
 size = Vector3(10.7796, 0.175193, 3.78373)
 material = SubResource("StandardMaterial3D_fxwog")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.192378, -5.56301)
-size = Vector3(31.7184, 1, 1)
-material = SubResource("StandardMaterial3D_675t8")
-
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18912, -5.56301)
 size = Vector3(31.4775, 3.85818, 1)
 material = SubResource("StandardMaterial3D_iyoj5")
 
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0129583, -5.56301)
+size = Vector3(31.4775, 1.53706, 1)
+material = SubResource("StandardMaterial3D_675t8")
+
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0518, -0.192378, -2.6673)
-size = Vector3(2, 3.858, 17.3862)
+size = Vector3(2, 1.32357, 17.3862)
 material = SubResource("StandardMaterial3D_675t8")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]

@@ -1,19 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2vru48ambwho"]
+[gd_scene load_steps=12 format=3 uid="uid://d2vru48ambwho"]
 
 [ext_resource type="Script" path="res://scenes/lever/lever.gd" id="1_n2lmq"]
 [ext_resource type="Script" path="res://scenes/lever/destroy_lever_pushed.gd" id="2_ahqli"]
+[ext_resource type="ArrayMesh" uid="uid://cogclmdc7fgrb" path="res://models/lever/lever_handle.res" id="2_mttxd"]
+[ext_resource type="ArrayMesh" uid="uid://d03rnq1n468ce" path="res://models/lever/lever_casing.res" id="3_2lnv7"]
+[ext_resource type="ArrayMesh" uid="uid://binabcccgomtr" path="res://models/lever/lever_base.res" id="4_0lhmv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6wd8"]
-size = Vector3(1, 0.25, 1)
+size = Vector3(1.01668, 0.169834, 1.95087)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7ilj"]
+size = Vector3(0.190377, 0.473782, 1.0779)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8aym5"]
-size = Vector3(0.25, 1, 0.25)
-
-[sub_resource type="BoxMesh" id="BoxMesh_f8s1s"]
-size = Vector3(0.25, 1, 0.25)
+size = Vector3(0.10338, 1.24865, 0.175297)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mpd3g"]
-size = Vector3(0.2, 0.5, 0.2)
+size = Vector3(0.0942629, 1.00338, 0.2)
 
 [sub_resource type="Animation" id="Animation_wb3c0"]
 length = 0.001
@@ -31,6 +34,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_3gujo"]
 resource_name = "push_lever"
+length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,42 +56,53 @@ _data = {
 [node name="Lever" type="StaticBody3D"]
 script = ExtResource("1_n2lmq")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="LeverBaseCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0850213, 0)
 shape = SubResource("BoxShape3D_o6wd8")
 
-[node name="LeverFrame" type="CSGBox3D" parent="."]
-size = Vector3(1, 0.25, 1)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.236092, 0)
+shape = SubResource("BoxShape3D_k7ilj")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="LeverFrame"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-operation = 2
-size = Vector3(0.25, 0.24, 0.75)
+[node name="LeverCasingMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("3_2lnv7")
 
-[node name="LeverPushable" type="StaticBody3D" parent="."]
+[node name="LeverBaseMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("4_0lhmv")
+
+[node name="LeverHandle" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverPushable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverHandle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.825584, 0.00427115)
 shape = SubResource("BoxShape3D_8aym5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LeverPushable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
-mesh = SubResource("BoxMesh_f8s1s")
+[node name="LeverHandleMesh" type="MeshInstance3D" parent="LeverHandle"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("2_mttxd")
 
-[node name="Area3D" type="Area3D" parent="LeverPushable"]
+[node name="Area3D" type="Area3D" parent="LeverHandle"]
 collision_mask = 2
 script = ExtResource("2_ahqli")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverPushable/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107145, 0.63695, 0.0820478)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverHandle/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.913603, 0.0635037)
 shape = SubResource("BoxShape3D_mpd3g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../LeverPushable")
+root_node = NodePath("../LeverHandle")
 libraries = {
 "": SubResource("AnimationLibrary_deisq")
 }
 
+
 [connection signal="lever_pushed" from="." to="LeverPushable/Area3D" method="_on_lever_lever_pushed"]
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g3vkd")
+
+
 [connection signal="body_entered" from="LeverPushable/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
