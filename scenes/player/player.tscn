@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://0eqrmj5wilsi"]
+[gd_scene load_steps=8 format=3 uid="uid://0eqrmj5wilsi"]
 
 [ext_resource type="Script" path="res://scenes/player/player_controller.gd" id="1_tfanf"]
 [ext_resource type="PackedScene" uid="uid://cabmxkxmbb6sn" path="res://models/box/box.glb" id="2_whaew"]
 [ext_resource type="Material" uid="uid://datd2oh32y488" path="res://materials/player_ball.tres" id="3_eawry"]
+[ext_resource type="Script" path="res://scenes/player/player_camera.gd" id="4_vmdl1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bxfwp"]
 size = Vector3(1, 0.1, 1)
@@ -57,3 +58,7 @@ shape = SubResource("SphereShape3D_iynq1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBall"]
 mesh = SubResource("SphereMesh_fodau")
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 4)
+script = ExtResource("4_vmdl1")
