@@ -16,10 +16,15 @@ func _process(delta):
 
 func _on_menu_button_pressed():
 	SceneTransition.change_scene("res://scenes/menus_and_gui/main_menu.tscn")
+	#$AudioStreamPlayer.volume_db = $AudioStreamPlayer.volume_db-10
+	
 
 #Updates Volume Global variable 
 func _on_h_slider_value_changed(value):
 	$CenterContainer/VBoxContainer/HSlider/VolumeLabel.text = "Volume: " + str(value)
 	$"/root/Volume".GlobalVolume = value
+	AudioServer.set_bus_volume_db(0,db_to_linear(value-40))
+	if($AudioStreamPlayer.playing==false):
+		$AudioStreamPlayer.play()
 
 

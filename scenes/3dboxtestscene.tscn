@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://qfwd00wxp2x7"]
+[gd_scene load_steps=13 format=3 uid="uid://qfwd00wxp2x7"]
 
 [ext_resource type="PackedScene" path="res://scenes/menus_and_gui/gui.tscn" id="1_fymrw"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_kwmte"]
-[ext_resource type="Material" uid="uid://b2d5x4dh631hd" path="res://materials/test_material.tres" id="1_v0ncw"]
+[ext_resource type="Material" path="res://materials/test_material.tres" id="1_v0ncw"]
 [ext_resource type="Texture2D" uid="uid://ca5w8op6ugdrr" path="res://textures/metal_panel_transparent.png" id="2_m0gxx"]
-[ext_resource type="Environment" uid="uid://kqiadxouiuqo" path="res://default_environment.tres" id="2_s2q2v"]
+[ext_resource type="Environment" uid="uid://bkm4870761n5y" path="res://default_environment.tres" id="2_s2q2v"]
+[ext_resource type="Script" path="res://Audio/PlayerSounds.gd" id="4_b8pt3"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="5_csvti"]
+[ext_resource type="AudioStream" uid="uid://bwjxno38uwhs6" path="res://Audio/rollingCube2.wav" id="5_yytg3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxwog"]
 transparency = 2
@@ -65,6 +67,10 @@ size = Vector3(2, 3.858, 17.3862)
 material = SubResource("StandardMaterial3D_iyoj5")
 
 [node name="Player" parent="." instance=ExtResource("1_kwmte")]
+
+[node name="Player_Sounds" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("5_yytg3")
+script = ExtResource("4_b8pt3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_s2q2v")

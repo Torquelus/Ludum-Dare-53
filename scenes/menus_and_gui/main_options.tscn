@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://1fa4stx2i3g1"]
+[gd_scene load_steps=5 format=3 uid="uid://1fa4stx2i3g1"]
 
 [ext_resource type="Script" path="res://scripts/menu_and_gui/main_options.gd" id="1_qdv4o"]
+[ext_resource type="AudioStream" uid="uid://bwjxno38uwhs6" path="res://Audio/rollingCube2.wav" id="2_ng2vt"]
 
 [sub_resource type="Gradient" id="Gradient_vcfly"]
 offsets = PackedFloat32Array(0, 0.0193548, 1)
@@ -56,6 +57,9 @@ text = "Volume: "
 layout_mode = 2
 text = "Return to Main Menu"
 icon = SubResource("GradientTexture1D_kaubf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ng2vt")
 
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
