@@ -1,9 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpgy0y7qkcw8w"]
+[gd_scene load_steps=3 format=3 uid="uid://bpgy0y7qkcw8w"]
 
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_twa4a"]
-[ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="2_wf2yg"]
-[ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="4_2y1s6"]
-[ext_resource type="PackedScene" uid="uid://bm40plhn37skn" path="res://scenes/door/door.tscn" id="5_sa714"]
 [ext_resource type="PackedScene" uid="uid://bch80v7hdpwq0" path="res://scenes/gear/gear.tscn" id="6_0jueq"]
 
 [node name="Node3D" type="Node3D"]
@@ -19,40 +16,17 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.21241, 0)
 size = Vector3(20.4259, 1, 11.444)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, -3.44854)
-size = Vector3(2.27781, 6.11447, 4.17471)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, -0.766784)
-size = Vector3(2.27781, 3.92702, 1.57445)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, 0.61396)
-size = Vector3(2.27781, 1.66366, 1.57445)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.464346, 1.91933)
-size = Vector3(2.27781, 0.919606, 1.57445)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
 shadow_enabled = true
 
-[node name="Lever" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_wf2yg")]
-transform = Transform3D(-0.02007, 0.999799, -1.16392e-10, -0.0589113, -0.00118259, 0.998263, 0.998061, 0.0200351, 0.0589231, -3.44803, 1.79886, -2.45589)
-target = NodePath("../Door")
-
-[node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_2y1s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38274, -0.619024, -1.5019)
-target = NodePath("")
-
-[node name="Door" parent="." instance=ExtResource("5_sa714")]
-transform = Transform3D(-0.122008, 0, 0.992529, 0, 1, 0, -0.992529, 0, -0.122008, -5.25389, 0.190459, 1.38361)
-
 [node name="Player" parent="." instance=ExtResource("1_twa4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5665, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9312, 0, 0)
 
 [node name="gear" parent="." instance=ExtResource("6_0jueq")]
-transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 2.56297, -0.688709, -0.020618)
+transform = Transform3D(3.82137e-15, 8.74228e-08, 2, 2, -8.74228e-08, 0, 8.74228e-08, 2, -8.74228e-08, -2.27717, -0.658335, 0)
+rotation_duration = 8.0
+
+[node name="gear2" parent="." instance=ExtResource("6_0jueq")]
+transform = Transform3D(0.75164, 4.81588e-08, 1.85339, 1.85339, -1.13869e-07, -0.75164, 8.74228e-08, 2, -8.74228e-08, 3.87819, -0.688709, 0.0464174)
 rotation_duration = 8.0
