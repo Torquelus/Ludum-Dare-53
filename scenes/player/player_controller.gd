@@ -62,7 +62,7 @@ func _physics_process(_delta):
 			
 		
 	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(player_box_rigidbody.position + Vector3.DOWN * 0.3, player_box_rigidbody.position + Vector3.DOWN * 0.7, 1)
+	var query = PhysicsRayQueryParameters3D.create(player_box_rigidbody.position + Vector3.DOWN * 0.3, player_box_rigidbody.position + Vector3.DOWN * 0.8, 1)
 	var result = space_state.intersect_ray(query)
 	
 	if result:
