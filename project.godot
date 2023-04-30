@@ -11,17 +11,15 @@ config_version=5
 [application]
 
 config/name="Ludum Dare 53"
-<<<<<<< Updated upstream
-run/main_scene="res://scenes/menus_and_gui/main_menu.tscn"
-=======
 run/main_scene="res://scenes/scanlabel.tscn"
->>>>>>> Stashed changes
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
-<<<<<<<HEADrun/main_scene="res://scenes/main_menu.tscn"
 "<<<<<<<HEAD[layer_names]3d_physics/layer_1"="Environment"
 3d_physics/layer_2="Player Box"
 3d_physics/layer_3="Player Ball"
+<<<<<<<HEADrun/main_scene="res://scenes/main_menu.tscn"
+<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="res://scenes/menus_and_gui/main_menu.tscn"
+"[layer_names]3d_physics/layer_1"="Environment"
 
 [autoload]
 

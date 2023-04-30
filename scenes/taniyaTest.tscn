@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsb478do86qay"]
+[gd_scene load_steps=5 format=3 uid="uid://bsb478do86qay"]
 
 [ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_twa4a"]
+[ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_l1foq"]
+[ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="2_wf2yg"]
+[ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="4_2y1s6"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)
+transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 4.30489, 7.02716)
 current = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
@@ -16,13 +19,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.21241, 0)
 size = Vector3(20.4259, 1, 11.444)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, 0)
-size = Vector3(2.27781, 1.12554, 4.17471)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, -3.44854)
+size = Vector3(2.27781, 6.11447, 4.17471)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_twa4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27237, 4.27009, -3.39126)
+
+[node name="Lever" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_wf2yg")]
+transform = Transform3D(-0.02007, 0.999799, -1.16392e-10, -0.0589113, -0.00118259, 0.998263, 0.998061, 0.0200351, 0.0589231, -3.44803, 1.79886, -2.45589)
+target = NodePath("../Conveyor")
+
+[node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_2y1s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38274, -0.619024, -1.5019)
+target = NodePath("../Conveyor")
 
 [node name="Conveyor" parent="." instance=ExtResource("2_l1foq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59112, -0.165301, 0)
+constant_linear_velocity = Vector3(0, 0, 2)
+disable = true
+conveyer_direction = Vector3(0, 0, 2)
+conveyor_strength = 1

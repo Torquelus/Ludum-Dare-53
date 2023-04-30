@@ -1,12 +1,16 @@
 extends Node3D
 
-@onready var button_anim = $AnimationPlayer
-var pressed: bool = false
+@onready var lever_anim = $AnimationPlayer
+
+@export var target:Node3D
+signal lever_pushed
+
+var pushed: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	if target:
+		lever_pushed.connect(target.enable_process)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -14,16 +18,15 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	pressed = true
-	button_anim.play("button_pushed")
-
-func _on_area_3d_body_exited(body):
-	pressed = false
-	button_anim.play_backwards("button_pushed")
+	pushed = true
+	lever_anim.play("lever_pushed")
 
 
 func _on_animation_player_animation_finished(anim_name):
-	if pressed == true:
-		print("button pressed")
-	else:
-		print("noPress")
+	if pushed == true:
+		lever_pushed.emit()
+		process_mode = Node.PROCESS_MODE_DISABLED
+
+
+
+

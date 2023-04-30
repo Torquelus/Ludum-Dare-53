@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b2d5x4dh631hd"]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://1siwbfegvbd6"]
 
 [ext_resource type="Texture2D" uid="uid://b1mmrxo4jwa1x" path="res://textures/floor_boards/floor_boards.png" id="1_mnajv"]
 [ext_resource type="Texture2D" uid="uid://cacabyqlwhpdk" path="res://textures/floor_boards/floor_boards_ambient_occlusion_map.png" id="2_pqhrv"]
