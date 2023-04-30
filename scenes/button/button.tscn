@@ -1,18 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://do5isyg8q1f"]
+[gd_scene load_steps=10 format=3 uid="uid://do5isyg8q1f"]
 
 [ext_resource type="Script" path="res://scenes/button/button.gd" id="1_gtd3p"]
+[ext_resource type="ArrayMesh" uid="uid://dpoys2qe4pdql" path="res://models/button/button_mesh.res" id="2_0bg3n"]
+[ext_resource type="ArrayMesh" uid="uid://1djhys0eiybo" path="res://models/button/button_case_mesh.res" id="2_ttlk6"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_o6wd8"]
-size = Vector3(1, 0.25, 1)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f0yu1"]
+height = 0.182293
+radius = 0.501121
 
-[sub_resource type="BoxMesh" id="BoxMesh_f8s1s"]
-size = Vector3(0.75, 0.25, 0.75)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uuwvb"]
+height = 0.118071
+radius = 0.381969
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g8hpg"]
-size = Vector3(0.75, 0.25, 0.75)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mpd3g"]
-size = Vector3(0.75, 0.25, 0.75)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qcnqo"]
+height = 0.142167
+radius = 0.374307
 
 [sub_resource type="Animation" id="Animation_yd77q"]
 length = 0.001
@@ -30,6 +32,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_pq2ex"]
 resource_name = "button_pushed"
+length = 0.3
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,8 +41,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0, 0.0896129, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tecsg"]
@@ -52,24 +55,31 @@ _data = {
 script = ExtResource("1_gtd3p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_o6wd8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0893742, 0)
+shape = SubResource("CylinderShape3D_f0yu1")
 
-[node name="ButtonFrame" type="CSGBox3D" parent="."]
-size = Vector3(1, 0.25, 1)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="ButtonFrame"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00541383, 0)
-operation = 2
-size = Vector3(0.75, 0.24, 0.75)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.0889198, 0)
+mesh = ExtResource("2_ttlk6")
 
 [node name="ButtonPushable" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18851, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonPushable"]
-mesh = SubResource("BoxMesh_f8s1s")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.161594, 0)
+mesh = ExtResource("2_0bg3n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonPushable"]
-shape = SubResource("BoxShape3D_g8hpg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0336933, 0)
+shape = SubResource("CylinderShape3D_uuwvb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ButtonPushable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0575401, 0)
+light_color = Color(0.886275, 0.32549, 0.388235, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 2.0
+omni_attenuation = 2.0
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.316445, 0)
@@ -77,7 +87,7 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0582866, 0)
-shape = SubResource("BoxShape3D_mpd3g")
+shape = SubResource("CylinderShape3D_qcnqo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
