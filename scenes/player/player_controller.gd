@@ -10,6 +10,8 @@ extends Node3D
 @export var max_velocity = 50.0
 ## Amount of force player ball jumps upwards with.
 @export var jump_force = 600.0
+## Amount needed to trigger audio sound effects
+@export var min_velocity = 5
 
 
 ## Direction to apply movement force in.
@@ -40,6 +42,21 @@ func _input(event):
 func _physics_process(_delta):
 	if Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() < max_velocity:
 		player_ball_rigidbody.apply_force(_force_dir * push_force, Vector3.ZERO)
+		print_debug(str($Player_Sounds.volume_db))
+		## Play rolling sound if total velocity > min_velocity, otherwise quiet it and eventaully turn off
+		if ($Player_Sounds.playing!=true && Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() > min_velocity)  :
+			if(int($Player_Sounds.volume_db)<(int($"/root/Volume".GlobalVolume-40))):
+				$Player_Sounds.volume_db = $Player_Sounds.volume_db + 1
+				$Player_Sounds.play()
+				
+		elif($Player_Sounds.playing==true && Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() < min_velocity):
+			if($Player_Sounds.volume_db <= ($"/root/Volume".GlobalVolume-60)):
+				$Player_Sounds.stop()
+			else:
+				$Player_Sounds.volume_db =$Player_Sounds.volume_db - 1
+			
+
+			
 		
 	var space_state = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(player_box_rigidbody.position + Vector3.DOWN * 0.3, player_box_rigidbody.position + Vector3.DOWN * 0.7, 1)
