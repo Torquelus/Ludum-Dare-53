@@ -17,12 +17,13 @@ extends Node3D
 ## Direction to apply movement force in.
 var _force_dir: Vector3 = Vector3.ZERO
 
-
 ## Rigidbody of player ball.
 @onready var player_ball_rigidbody: RigidBody3D = $PlayerBall
 @onready var player_box_rigidbody: RigidBody3D = $Box
 @onready var player_camera: Camera3D = $PlayerCamera
 
+## Stored player sound volume of rolling
+@onready var old_rolling_volume = $Player_Sounds.volume_db
 
 var _is_grounded = false
 
@@ -42,18 +43,20 @@ func _input(event):
 func _physics_process(_delta):
 	if Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() < max_velocity:
 		player_ball_rigidbody.apply_force(_force_dir * push_force, Vector3.ZERO)
-		print_debug(str($Player_Sounds.volume_db))
+		
 		## Play rolling sound if total velocity > min_velocity, otherwise quiet it and eventaully turn off
-		if ($Player_Sounds.playing!=true && Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() > min_velocity)  :
-			if(int($Player_Sounds.volume_db)<(int($"/root/Volume".GlobalVolume-40))):
-				$Player_Sounds.volume_db = $Player_Sounds.volume_db + 1
+		if (Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() > min_velocity)  :
+			if($Player_Sounds.playing!=true):
+				$Player_Sounds.seek(1)
 				$Player_Sounds.play()
+			if($Player_Sounds.volume_db<old_rolling_volume):
+				$Player_Sounds.volume_db = $Player_Sounds.volume_db + 0.5
 				
-		elif($Player_Sounds.playing==true && Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() < min_velocity):
-			if($Player_Sounds.volume_db <= ($"/root/Volume".GlobalVolume-60)):
+		elif($Player_Sounds.playing==true && (Vector2(player_ball_rigidbody.linear_velocity.x, player_ball_rigidbody.linear_velocity.z).length() < min_velocity)):
+			if($Player_Sounds.volume_db <= (old_rolling_volume-10)):
 				$Player_Sounds.stop()
 			else:
-				$Player_Sounds.volume_db =$Player_Sounds.volume_db - 1
+				$Player_Sounds.volume_db =$Player_Sounds.volume_db - 0.2
 			
 
 			
