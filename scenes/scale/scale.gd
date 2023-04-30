@@ -14,10 +14,13 @@ func _process(delta):
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("boxes"):
 		counter += 1
-	print (counter)
+	update_scale()
 
 
 func _on_area_3d_body_exited(body):
 	if body.is_in_group("boxes"):
 		counter -= 1
-	print (counter) 
+	update_scale()
+	
+func update_scale():
+	$Display.mesh.set_text(str("%d Boxes" % counter))
