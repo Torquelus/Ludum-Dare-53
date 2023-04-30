@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://kumgvtb5d1o7"]
+[gd_scene load_steps=10 format=3 uid="uid://kumgvtb5d1o7"]
 
 [ext_resource type="Script" path="res://scenes/player/player_controller.gd" id="1_tfanf"]
 [ext_resource type="PackedScene" uid="uid://cabmxkxmbb6sn" path="res://models/box/box.glb" id="2_whaew"]
 [ext_resource type="Material" uid="uid://datd2oh32y488" path="res://materials/player_ball.tres" id="3_eawry"]
 [ext_resource type="Script" path="res://scenes/player/player_camera.gd" id="4_vmdl1"]
+[ext_resource type="AudioStream" uid="uid://bwjxno38uwhs6" path="res://Audio/rollingCube2.wav" id="5_ovoa2"]
+[ext_resource type="AudioStream" uid="uid://c4t2u7xbg1gi3" path="res://sounds/boxdrop3.wav" id="6_flgjv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bxfwp"]
 size = Vector3(1, 0.1, 1)
@@ -65,3 +67,9 @@ mesh = SubResource("SphereMesh_fodau")
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 4)
 script = ExtResource("4_vmdl1")
+
+[node name="Player_Sounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ovoa2")
+
+[node name="Jump_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_flgjv")
