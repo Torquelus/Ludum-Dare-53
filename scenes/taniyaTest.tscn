@@ -24,3 +24,5 @@ transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.7
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_twa4a")]
+
+[node name="Conveyor" parent="." instance=ExtResource("2_l1foq")]
