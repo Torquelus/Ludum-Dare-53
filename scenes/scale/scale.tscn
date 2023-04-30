@@ -66,7 +66,7 @@ shape = SubResource("BoxShape3D_67x7g")
 collision_mask = 3
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.424058, -0.435947)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00209522, 0.448294, -0.472292)
 shape = SubResource("BoxShape3D_1j0ki")
 
 [node name="Display" type="MeshInstance3D" parent="."]
