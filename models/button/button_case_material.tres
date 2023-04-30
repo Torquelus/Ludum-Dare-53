@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://xigjtrkx7yf1"]
+
+[ext_resource type="Texture2D" uid="uid://cfbfjjnorihy" path="res://models/button/button_case.png" id="1_y0s8t"]
+
+[resource]
+albedo_texture = ExtResource("1_y0s8t")
+metallic = 0.6
+roughness = 0.7
+texture_filter = 0

@@ -26,7 +26,3 @@ func _on_animation_player_animation_finished(anim_name):
 	if pushed == true:
 		lever_pushed.emit()
 		process_mode = Node.PROCESS_MODE_DISABLED
-
-
-
-
