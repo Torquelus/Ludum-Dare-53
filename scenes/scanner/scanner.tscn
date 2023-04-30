@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://pb1o6i5a6h05"]
+
+[ext_resource type="Material" uid="uid://i7ohq3r6cgf2" path="res://materials/scanner_red.tres" id="1_m8o6h"]
+[ext_resource type="Script" path="res://scenes/scanner/scanner.gd" id="1_o3o7n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n5lkp"]
+size = Vector3(2, 1.5, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xwv86"]
+data = PackedVector3Array(-1, 0.75, 0.1, 1, 0.75, 0.1, -1, -0.75, 0.1, 1, 0.75, 0.1, 1, -0.75, 0.1, -1, -0.75, 0.1, 1, 0.75, -0.1, -1, 0.75, -0.1, 1, -0.75, -0.1, -1, 0.75, -0.1, -1, -0.75, -0.1, 1, -0.75, -0.1, 1, 0.75, 0.1, 1, 0.75, -0.1, 1, -0.75, 0.1, 1, 0.75, -0.1, 1, -0.75, -0.1, 1, -0.75, 0.1, -1, 0.75, -0.1, -1, 0.75, 0.1, -1, -0.75, -0.1, -1, 0.75, 0.1, -1, -0.75, 0.1, -1, -0.75, -0.1, 1, 0.75, 0.1, -1, 0.75, 0.1, 1, 0.75, -0.1, -1, 0.75, 0.1, -1, 0.75, -0.1, 1, 0.75, -0.1, -1, -0.75, 0.1, 1, -0.75, 0.1, -1, -0.75, -0.1, 1, -0.75, 0.1, 1, -0.75, -0.1, -1, -0.75, -0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l6wen"]
+size = Vector3(2, 0.2, 5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_32o23"]
+data = PackedVector3Array(-1, 0.1, 2.5, 1, 0.1, 2.5, -1, -0.1, 2.5, 1, 0.1, 2.5, 1, -0.1, 2.5, -1, -0.1, 2.5, 1, 0.1, -2.5, -1, 0.1, -2.5, 1, -0.1, -2.5, -1, 0.1, -2.5, -1, -0.1, -2.5, 1, -0.1, -2.5, 1, 0.1, 2.5, 1, 0.1, -2.5, 1, -0.1, 2.5, 1, 0.1, -2.5, 1, -0.1, -2.5, 1, -0.1, 2.5, -1, 0.1, -2.5, -1, 0.1, 2.5, -1, -0.1, -2.5, -1, 0.1, 2.5, -1, -0.1, 2.5, -1, -0.1, -2.5, 1, 0.1, 2.5, -1, 0.1, 2.5, 1, 0.1, -2.5, -1, 0.1, 2.5, -1, 0.1, -2.5, 1, 0.1, -2.5, -1, -0.1, 2.5, 1, -0.1, 2.5, -1, -0.1, -2.5, 1, -0.1, 2.5, 1, -0.1, -2.5, -1, -0.1, -2.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_bi527"]
+material = ExtResource("1_m8o6h")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yvxwo"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mi3v5"]
+size = Vector3(0.961163, 0.2, 5)
+
+[node name="Scanner" type="Node3D"]
+script = ExtResource("1_o3o7n")
+
+[node name="Left" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.61444)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.841169, 0)
+mesh = SubResource("BoxMesh_n5lkp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.841169, 0)
+shape = SubResource("ConcavePolygonShape3D_xwv86")
+
+[node name="Right" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.59123)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.841169, 0)
+mesh = SubResource("BoxMesh_n5lkp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.841169, 0)
+shape = SubResource("ConcavePolygonShape3D_xwv86")
+
+[node name="Top" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0220268, 1.49135, -0.0125258)
+mesh = SubResource("BoxMesh_l6wen")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49862, 0)
+shape = SubResource("ConcavePolygonShape3D_32o23")
+
+[node name="Light" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40349, 0)
+
+[node name="LightMesh" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265652, 0)
+mesh = SubResource("PrismMesh_bi527")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265652, 0)
+shape = SubResource("ConcavePolygonShape3D_yvxwo")
+
+[node name="Scan Area" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scan Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392309, 0)
+shape = SubResource("BoxShape3D_mi3v5")
+
+[connection signal="body_entered" from="Scan Area" to="." method="_on_scan_area_body_entered"]

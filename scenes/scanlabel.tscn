@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ntjrc7uolfd"]
+
+[ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_uhmyn"]
+[ext_resource type="PackedScene" uid="uid://pb1o6i5a6h05" path="res://scenes/scanner/scanner.tscn" id="2_gaj77"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_uhmyn")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 11.7447, 5.75348, 10.6418)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4801, -1.21241, 0)
+size = Vector3(44.7896, 1, 11.444)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, 0)
+size = Vector3(2.27781, 1.12554, 4.17471)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
+shadow_enabled = true
+
+[node name="Scanner" parent="." instance=ExtResource("2_gaj77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4191, -0.955939, 0.114705)
