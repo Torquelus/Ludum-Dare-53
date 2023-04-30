@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://nqbn5qiiuefd"]
+
+[ext_resource type="Script" path="res://sounds/ambient/BackgroundAudio.gd" id="1_tyj12"]
+[ext_resource type="AudioStream" uid="uid://h2j6dcbx45w8" path="res://sounds/ambient/ambient3loop.wav" id="2_jigxm"]
+
+[node name="BackgroundAudio" type="Node"]
+script = ExtResource("1_tyj12")
+
+[node name="BackgroundAmbient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jigxm")

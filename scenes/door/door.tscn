@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm40plhn37skn"]
+[gd_scene load_steps=6 format=3 uid="uid://bm40plhn37skn"]
 
 [ext_resource type="Script" path="res://scenes/door/door.gd" id="1_3ewmh"]
+[ext_resource type="AudioStream" uid="uid://c4ebskuj5dmox" path="res://sounds/doorunlocksound1.wav" id="2_sd3ia"]
+[ext_resource type="AudioStream" uid="uid://dd2eixmanplyx" path="res://sounds/doorhingecreak.wav" id="3_56kf7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3lhg"]
 size = Vector3(1.5, 2, 0.25)
@@ -27,3 +29,9 @@ shape = SubResource("BoxShape3D_r3lhg")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0)
 mesh = SubResource("BoxMesh_u6djd")
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sd3ia")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_56kf7")
