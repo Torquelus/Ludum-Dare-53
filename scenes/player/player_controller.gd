@@ -66,6 +66,8 @@ func _physics_process(_delta):
 	var result = space_state.intersect_ray(query)
 	
 	if result:
+		if(_is_grounded == false):
+			$Jump_Sound.play(0.13)
 		_is_grounded = true
 	else:
 		_is_grounded = false
