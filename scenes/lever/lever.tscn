@@ -1,54 +1,55 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2vru48ambwho"]
 
-[ext_resource type="Script" path="res://scenes/button/button.gd" id="1_bp3jr"]
+[ext_resource type="Script" path="res://scenes/lever/lever.gd" id="1_n2lmq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6wd8"]
 size = Vector3(1, 0.25, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_f8s1s"]
-size = Vector3(0.75, 0.25, 0.75)
+[sub_resource type="BoxShape3D" id="BoxShape3D_8aym5"]
+size = Vector3(0.25, 1, 0.25)
 
-[sub_resource type="Animation" id="Animation_yd77q"]
+[sub_resource type="BoxMesh" id="BoxMesh_f8s1s"]
+size = Vector3(0.25, 1, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpd3g"]
+size = Vector3(0.2, 0.5, 0.2)
+
+[sub_resource type="Animation" id="Animation_wb3c0"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LeverPushable:position:y")
+tracks/0/path = NodePath(".:rotation:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.18851, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.523599, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_pq2ex"]
-resource_name = "button_pushed"
+[sub_resource type="Animation" id="Animation_3gujo"]
+resource_name = "push_lever"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LeverPushable:position:y")
+tracks/0/path = NodePath(".:rotation:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(0.523599, -0.25, 0, 0.25, 0, -0.523599, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tecsg"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_deisq"]
 _data = {
-"RESET": SubResource("Animation_yd77q"),
-"button_pushed": SubResource("Animation_pq2ex")
+"RESET": SubResource("Animation_wb3c0"),
+"lever_pushed": SubResource("Animation_3gujo")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g8hpg"]
-size = Vector3(0.75, 0.25, 0.75)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mpd3g"]
-size = Vector3(0.75, 0.25, 0.75)
 
 [node name="Lever" type="StaticBody3D"]
+script = ExtResource("1_n2lmq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_o6wd8")
@@ -57,34 +58,33 @@ shape = SubResource("BoxShape3D_o6wd8")
 size = Vector3(1, 0.25, 1)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="LeverFrame"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00541383, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 operation = 2
-size = Vector3(0.75, 0.24, 0.75)
+size = Vector3(0.25, 0.24, 0.75)
 
 [node name="LeverPushable" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18851, 0)
-script = ExtResource("1_bp3jr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LeverPushable"]
-mesh = SubResource("BoxMesh_f8s1s")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LeverPushable"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_tecsg")
-}
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeverPushable"]
-shape = SubResource("BoxShape3D_g8hpg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_8aym5")
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.316445, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeverPushable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("BoxMesh_f8s1s")
+
+[node name="Area3D" type="Area3D" parent="LeverPushable"]
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0582866, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverPushable/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107145, 0.63695, 0.0820478)
 shape = SubResource("BoxShape3D_mpd3g")
 
-[connection signal="animation_finished" from="LeverPushable/AnimationPlayer" to="LeverPushable" method="_on_animation_player_animation_finished"]
-[connection signal="body_entered" from="Area3D" to="LeverPushable" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="LeverPushable" method="_on_area_3d_body_exited"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../LeverPushable")
+libraries = {
+"": SubResource("AnimationLibrary_deisq")
+}
+
+[connection signal="body_entered" from="LeverPushable/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
