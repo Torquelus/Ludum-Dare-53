@@ -1,9 +1,19 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://82a8c8na2nv2"]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b2d5x4dh631hd"]
 
-[ext_resource type="Texture2D" uid="uid://bajyqtgho7ypy" path="res://textures/metal_panel.png" id="1_ueuuv"]
+[ext_resource type="Texture2D" uid="uid://b1mmrxo4jwa1x" path="res://textures/floor_boards/floor_boards.png" id="1_mnajv"]
+[ext_resource type="Texture2D" uid="uid://cacabyqlwhpdk" path="res://textures/floor_boards/floor_boards_ambient_occlusion_map.png" id="2_pqhrv"]
+[ext_resource type="Texture2D" uid="uid://ckxo25hrmogqy" path="res://textures/floor_boards/floor_boards_normal_map.png" id="3_gdnc2"]
+[ext_resource type="Texture2D" uid="uid://chnwne7buthoh" path="res://textures/floor_boards/floor_boards_roughnessmap.png" id="4_wl5fb"]
 
 [resource]
 transparency = 1
-albedo_texture = ExtResource("1_ueuuv")
+albedo_texture = ExtResource("1_mnajv")
+roughness_texture = ExtResource("4_wl5fb")
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("3_gdnc2")
+ao_enabled = true
+ao_texture = ExtResource("2_pqhrv")
+uv1_scale = Vector3(1, 1, 0.5)
 uv1_triplanar = true
 texture_filter = 0
