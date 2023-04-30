@@ -23,12 +23,21 @@ size = Vector3(20.4259, 1, 11.444)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, -3.44854)
 size = Vector3(2.27781, 6.11447, 4.17471)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, -0.766784)
+size = Vector3(2.27781, 3.92702, 1.57445)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, 0.61396)
+size = Vector3(2.27781, 1.66366, 1.57445)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.464346, 1.91933)
+size = Vector3(2.27781, 0.919606, 1.57445)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
 shadow_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_twa4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27237, 4.27009, -3.39126)
 
 [node name="Lever" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_wf2yg")]
 transform = Transform3D(-0.02007, 0.999799, -1.16392e-10, -0.0589113, -0.00118259, 0.998263, 0.998061, 0.0200351, 0.0589231, -3.44803, 1.79886, -2.45589)
@@ -45,3 +54,6 @@ conveyor_strength = 1
 
 [node name="Door" parent="." instance=ExtResource("5_sa714")]
 transform = Transform3D(-0.122008, 0, 0.992529, 0, 1, 0, -0.992529, 0, -0.122008, -5.25389, 0.190459, 1.38361)
+
+[node name="Player" parent="." instance=ExtResource("1_twa4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5665, 0, 0)
