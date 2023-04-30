@@ -17,7 +17,11 @@ var _force_dir: Vector3 = Vector3.ZERO
 
 ## Rigidbody of player ball.
 @onready var player_ball_rigidbody = $PlayerBall
-@onready var box_rigidbody = $Box
+@onready var player_camera = $PlayerCamera
+
+
+func _ready():
+	player_camera.current = true
 
 
 func _input(event):
