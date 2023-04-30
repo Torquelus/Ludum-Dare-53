@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" path="res://scenes/menus_and_gui/gui.tscn" id="1_fymrw"]
 [ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_kwmte"]
-[ext_resource type="Material" path="res://materials/test_material.tres" id="1_v0ncw"]
+[ext_resource type="Material" uid="uid://b2d5x4dh631hd" path="res://materials/test_material.tres" id="1_v0ncw"]
 [ext_resource type="Texture2D" uid="uid://ca5w8op6ugdrr" path="res://textures/metal_panel_transparent.png" id="2_m0gxx"]
-[ext_resource type="Environment" path="res://default_environment.tres" id="2_s2q2v"]
+[ext_resource type="Environment" uid="uid://dntu6oemy1r8" path="res://default_environment.tres" id="2_s2q2v"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="5_csvti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxwog"]
