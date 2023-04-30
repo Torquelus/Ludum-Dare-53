@@ -11,7 +11,9 @@ func _ready():
 func _process(delta):
 	if angular_velocity.y > max_speed:
 		angular_velocity.y = max_speed
-		
+	if (angular_velocity.y <0 || angular_velocity.y>1):
+		$AudioStreamPlayer2.play()
 		
 func enable_process():
 	lock_rotation = not lock_rotation
+	$AudioStreamPlayer1
