@@ -97,12 +97,5 @@ libraries = {
 "": SubResource("AnimationLibrary_deisq")
 }
 
-
-[connection signal="lever_pushed" from="." to="LeverPushable/Area3D" method="_on_lever_lever_pushed"]
-
-[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_g3vkd")
-
-
-[connection signal="body_entered" from="LeverPushable/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="LeverHandle/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
