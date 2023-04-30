@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bsb478do86qay"]
 
-[ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_twa4a"]
+[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_twa4a"]
 [ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_l1foq"]
 [ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="2_wf2yg"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="4_2y1s6"]
@@ -41,8 +41,6 @@ target = NodePath("../Conveyor")
 [node name="Conveyor" parent="." instance=ExtResource("2_l1foq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59112, -0.165301, 0)
 constant_linear_velocity = Vector3(0, 0, 2)
-disable = true
-conveyer_direction = Vector3(0, 0, 2)
 conveyor_strength = 1
 
 [node name="Door" parent="." instance=ExtResource("5_sa714")]

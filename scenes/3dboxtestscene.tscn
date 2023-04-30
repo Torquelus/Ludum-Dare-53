@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://qfwd00wxp2x7"]
 
 [ext_resource type="PackedScene" uid="uid://b646c8cukpk1a" path="res://scenes/menus_and_gui/gui.tscn" id="1_fymrw"]
-[ext_resource type="PackedScene" uid="uid://0eqrmj5wilsi" path="res://scenes/player/player.tscn" id="1_kwmte"]
-[ext_resource type="Material" uid="uid://1siwbfegvbd6" path="res://materials/test_material.tres" id="1_v0ncw"]
+[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_kwmte"]
+[ext_resource type="Material" uid="uid://b2d5x4dh631hd" path="res://materials/test_material.tres" id="1_v0ncw"]
 [ext_resource type="Texture2D" uid="uid://ca5w8op6ugdrr" path="res://textures/metal_panel_transparent.png" id="2_m0gxx"]
-[ext_resource type="Environment" uid="uid://dntu6oemy1r8" path="res://default_environment.tres" id="2_s2q2v"]
+[ext_resource type="Environment" uid="uid://bkm4870761n5y" path="res://default_environment.tres" id="2_s2q2v"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="5_csvti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxwog"]
@@ -81,6 +81,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, -0.116931, 0.99314, 0, -0.99314, -0.116931, -0.795463, 4.67405, -1.7224)
 light_energy = 10.752
 shadow_enabled = true
-shadow_bias = 0.601
-spot_range = 11.041
+shadow_bias = 0.01
+shadow_transmittance_bias = 0.373
+spot_range = 9.333
 script = ExtResource("5_csvti")
