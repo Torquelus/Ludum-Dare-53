@@ -1,39 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://q6p7rltojkmr"]
+[gd_scene load_steps=3 format=3 uid="uid://q6p7rltojkmr"]
 
-[ext_resource type="Material" uid="uid://cebsv4684c1sw" path="res://materials/player_box.tres" id="1_rvtbr"]
+[ext_resource type="PackedScene" uid="uid://cabmxkxmbb6sn" path="res://models/box/box.glb" id="1_l457w"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eq1i0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbv82"]
 size = Vector3(1, 0.1, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_hcnhg"]
-material = ExtResource("1_rvtbr")
-
 [node name="Box" type="RigidBody3D" groups=["boxes"]]
-collision_mask = 7
+collision_layer = 3
+collision_mask = 3
 
 [node name="TopCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
-shape = SubResource("BoxShape3D_eq1i0")
+shape = SubResource("BoxShape3D_wbv82")
 
 [node name="BottomCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
-shape = SubResource("BoxShape3D_eq1i0")
+shape = SubResource("BoxShape3D_wbv82")
 
 [node name="FrontCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.45)
-shape = SubResource("BoxShape3D_eq1i0")
+shape = SubResource("BoxShape3D_wbv82")
 
 [node name="BackCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.45)
-shape = SubResource("BoxShape3D_eq1i0")
+shape = SubResource("BoxShape3D_wbv82")
 
 [node name="LeftCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.45, 0, 0)
-shape = SubResource("BoxShape3D_eq1i0")
+shape = SubResource("BoxShape3D_wbv82")
 
 [node name="RightCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.45, 0, 0)
-shape = SubResource("BoxShape3D_eq1i0")
+shape = SubResource("BoxShape3D_wbv82")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_hcnhg")
+[node name="BoxMesh" parent="." instance=ExtResource("1_l457w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
