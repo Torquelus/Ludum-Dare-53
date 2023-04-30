@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kumgvtb5d1o7"]
+[gd_scene load_steps=11 format=3 uid="uid://kumgvtb5d1o7"]
 
 [ext_resource type="Script" path="res://scenes/player/player_controller.gd" id="1_tfanf"]
 [ext_resource type="PackedScene" uid="uid://cabmxkxmbb6sn" path="res://models/box/box.glb" id="2_whaew"]
@@ -8,6 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://c4t2u7xbg1gi3" path="res://sounds/boxdrop3.wav" id="6_flgjv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bxfwp"]
+size = Vector3(1, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3sgi1"]
 size = Vector3(1, 0.2, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iynq1"]
@@ -38,6 +41,12 @@ shape = SubResource("BoxShape3D_bxfwp")
 [node name="FrontCollider" type="CollisionShape3D" parent="Box"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.4)
 shape = SubResource("BoxShape3D_bxfwp")
+
+[node name="Area3D" type="Area3D" parent="Box/FrontCollider"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/FrontCollider/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0470126, -2.05499e-09)
+shape = SubResource("BoxShape3D_3sgi1")
 
 [node name="BackCollider" type="CollisionShape3D" parent="Box"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.4)
@@ -73,3 +82,5 @@ stream = ExtResource("5_ovoa2")
 
 [node name="Jump_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_flgjv")
+
+[connection signal="body_entered" from="Box/FrontCollider/Area3D" to="." method="_on_area_3d_body_entered"]

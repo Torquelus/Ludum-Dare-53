@@ -4,6 +4,9 @@ class_name PlayerController
 extends Node3D
 
 
+## Signal that gets emitted when label hits something
+signal label_side
+
 ## Amount of force applied when moving player ball around.
 @export var push_force = 30.0
 ## Maximum velocity for player ball.
@@ -71,3 +74,7 @@ func _physics_process(_delta):
 		_is_grounded = true
 	else:
 		_is_grounded = false
+
+
+func _on_area_3d_body_entered(body):
+	label_side.emit()
