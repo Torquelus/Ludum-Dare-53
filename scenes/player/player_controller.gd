@@ -70,6 +70,8 @@ func _physics_process(_delta):
 
 	raycast.global_rotation = Vector3.ZERO
 	if raycast.is_colliding():
+		if(_is_grounded==false):
+			$Jump_Sound.play(0.13)
 		_is_grounded = true
 	else:
 		_is_grounded = false

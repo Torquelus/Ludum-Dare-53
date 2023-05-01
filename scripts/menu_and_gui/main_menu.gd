@@ -9,7 +9,7 @@ func _ready():
 
 func _on_start_button_pressed():
 	#add fade to black or some transition
-	SceneTransition.change_scene("res://scenes/3dboxtestscene.tscn", "dissolve")
+	SceneTransition.change_scene(Volume.GlobalLevelSelect.pop_front(), "dissolve")
 
 
 func _on_options_button_pressed():
