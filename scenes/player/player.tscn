@@ -11,7 +11,7 @@
 size = Vector3(1, 0.1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3sgi1"]
-size = Vector3(1, 0.2, 1)
+size = Vector3(0.324613, 0.2, 0.248163)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iynq1"]
 radius = 0.25
@@ -38,7 +38,7 @@ shape = SubResource("BoxShape3D_bxfwp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
 shape = SubResource("BoxShape3D_bxfwp")
 
-[node name="FrontCollider" type="CollisionShape3D" parent="Box"]
+[node name="FrontCollider" type="CollisionShape3D" parent="Box" groups=["label_side"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.45)
 shape = SubResource("BoxShape3D_bxfwp")
 
@@ -58,10 +58,11 @@ shape = SubResource("BoxShape3D_bxfwp")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.42456)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.742391)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0470126, -2.05499e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128769, -0.256588, -0.176214)
 shape = SubResource("BoxShape3D_3sgi1")
 
 [node name="PlayerBall" type="RigidBody3D" parent="."]

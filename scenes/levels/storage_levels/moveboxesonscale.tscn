@@ -91,3 +91,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8239, 1.72213, 2.97139)
 
 [node name="boxes@box21" parent="Boxes" instance=ExtResource("2_uaaij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8239, 1.72213, 4.53719)
+
+[connection signal="label_side" from="Player" to="scale" method="_on_player_label_side"]
