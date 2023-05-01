@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://geob7sopkvo8"]
 
-[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_43pnp"]
-[ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_noevp"]
+[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_s33ch"]
+[ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_2fmov"]
 
 [node name="Node3D2" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_43pnp")]
+[node name="Player" parent="." instance=ExtResource("1_s33ch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65137, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -28,5 +28,5 @@ shadow_enabled = true
 
 [node name="Boxes" type="Node" parent="."]
 
-[node name="Conveyor" parent="." instance=ExtResource("2_noevp")]
+[node name="Conveyor" parent="." instance=ExtResource("2_2fmov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115441, 0, -10.4962)

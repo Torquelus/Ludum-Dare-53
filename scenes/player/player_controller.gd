@@ -78,3 +78,4 @@ func _physics_process(_delta):
 
 func _on_area_3d_body_entered(body):
 	label_side.emit()
+	print ("printing")
