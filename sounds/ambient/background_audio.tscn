@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://nqbn5qiiuefd"]
+[gd_scene load_steps=5 format=3 uid="uid://nqbn5qiiuefd"]
 
 [ext_resource type="Script" path="res://sounds/ambient/BackgroundAudio.gd" id="1_tyj12"]
+[ext_resource type="AudioStream" uid="uid://dprl728dax15r" path="res://sounds/ambient/ambient1loop.wav" id="2_3r16b"]
 [ext_resource type="AudioStream" uid="uid://h2j6dcbx45w8" path="res://sounds/ambient/ambient3loop.wav" id="2_jigxm"]
+[ext_resource type="AudioStream" uid="uid://ch75un258tlq3" path="res://sounds/ambient/ambient2loop.wav" id="3_piuqb"]
 
 [node name="BackgroundAudio" type="Node"]
 script = ExtResource("1_tyj12")
 
-[node name="BackgroundAmbient" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundAmbient1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3r16b")
+
+[node name="BackgroundAmbient2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_piuqb")
+
+[node name="BackgroundAmbient3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jigxm")
