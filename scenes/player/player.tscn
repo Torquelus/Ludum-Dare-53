@@ -65,6 +65,9 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128769, -0.256588, -0.176214)
 shape = SubResource("BoxShape3D_3sgi1")
 
+[node name="RayCast3D" type="RayCast3D" parent="Box"]
+target_position = Vector3(0, -0.8, 0)
+
 [node name="PlayerBall" type="RigidBody3D" parent="."]
 collision_layer = 4
 collision_mask = 3
