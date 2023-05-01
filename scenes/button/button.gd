@@ -5,7 +5,7 @@ extends Node3D
 signal button_pushed
 signal button_unpushed
 
-@export var target:Node
+@export var target:Node3D
 @export var button_colour_unpressed: Color = Color("c83330")
 @export var button_colour_pressed: Color = Color("506627")
 @export var emission_strobe_time = 1.0
