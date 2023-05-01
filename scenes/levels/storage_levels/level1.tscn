@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c64joyn10htby" path="res://scenes/environment/world_environment.tscn" id="5_0pu5y"]
 [ext_resource type="PackedScene" uid="uid://bl0nxec2a2aqa" path="res://scenes/environment/wall_panel.tscn" id="6_sxe38"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="7_16cld"]
-[ext_resource type="PackedScene" uid="uid://bm40plhn37skn" path="res://scenes/door/door.tscn" id="8_q1a4l"]
+[ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="8_q1a4l"]
 
 [node name="level1" type="Node3D"]
 
@@ -125,4 +125,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30405, 0.134382, 0)
 target = NodePath("../Door")
 
 [node name="Door" parent="." instance=ExtResource("8_q1a4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30251, 1.33781, -4.80372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30251, 1.33781, 0.883797)
