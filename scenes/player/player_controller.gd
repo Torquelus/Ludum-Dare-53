@@ -27,6 +27,7 @@ var _force_dir: Vector3 = Vector3.ZERO
 
 ## Stored player sound volume of rolling
 @onready var old_rolling_volume = $Player_Sounds.volume_db
+@onready var raycast = $Box/RayCast3D
 
 var _is_grounded = false
 
@@ -60,20 +61,14 @@ func _physics_process(_delta):
 				$Player_Sounds.stop()
 			else:
 				$Player_Sounds.volume_db =$Player_Sounds.volume_db - 0.2
-			
-
-			
-		
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(player_box_rigidbody.position + Vector3.DOWN * 0.3, player_box_rigidbody.position + Vector3.DOWN * 0.8, 1)
-	var result = space_state.intersect_ray(query)
 	
-	if result:
-		if(_is_grounded == false):
-			$Jump_Sound.play(0.13)
+	raycast.global_rotation = Vector3.ZERO
+	if raycast.is_colliding():
 		_is_grounded = true
 	else:
 		_is_grounded = false
+		
+	
 
 
 func _on_area_3d_body_entered(body):
