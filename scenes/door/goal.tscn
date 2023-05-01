@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgtg1ojmnb3o6"]
+
+[ext_resource type="Script" path="res://scenes/door/goal.gd" id="1_26qpf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ytxqi"]
+size = Vector3(1.5, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8e2gq"]
+albedo_color = Color(0.745098, 0.890196, 0.568627, 1)
+emission_enabled = true
+emission = Color(0.00392157, 0.866667, 0.0470588, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xqn76"]
+material = SubResource("StandardMaterial3D_8e2gq")
+size = Vector3(1.5, 2, 1)
+
+[node name="Goal" type="Area3D"]
+script = ExtResource("1_26qpf")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.031472, -0.5)
+shape = SubResource("BoxShape3D_ytxqi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, -0.5)
+mesh = SubResource("BoxMesh_xqn76")
+skeleton = NodePath("")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

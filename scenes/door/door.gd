@@ -1,9 +1,9 @@
 extends StaticBody3D
 
-@onready var door_anim: AnimationPlayer = $AnimationPlayer
 
+@export var door_height: float = 2
+@onready var initial_position = position.y
 var max_speed:int = 10
-
 ## used to check if we should play the door opening sound effect
 var door_opening = false
 
@@ -14,19 +14,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	if angular_velocity.y > max_speed:
-#		angular_velocity.y = max_speed
-#	if ((angular_velocity.y <-0.1 || angular_velocity.y>0.1) && door_opening== false):
-#		if($AudioStreamPlayer.playing !=true):
-#			$AudioStreamPlayer.play()
-#			door_opening= true
-#	if (angular_velocity.y>-0.1 && angular_velocity.y <0.1):
-#		$AudioStreamPlayer.stop()
-#		door_opening = false
 	pass		
 
 func enable_process():
-	door_anim.play("door_animations/door_opened")
+	#door_anim.play("door_animations/door_opened")
+	var door_open_tween = create_tween()
+	door_open_tween.tween_property(self, "position:y", initial_position+door_height, 0.5).set_trans(Tween.TRANS_CUBIC)
+	$AudioStreamPlayer.play()
 
 func disable_process():
-	door_anim.play_backwards("door_animations/door_opened")
+	#door_anim.play_backwards("door_animations/door_opened")
+	var door_close_tween = create_tween()
+	door_close_tween.tween_property(self, "position:y", initial_position, 0.5).set_trans(Tween.TRANS_CUBIC)
+	$AudioStreamPlayer.play()

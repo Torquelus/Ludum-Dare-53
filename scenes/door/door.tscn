@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbqk87si48bwp"]
+[gd_scene load_steps=5 format=3 uid="uid://cbqk87si48bwp"]
 
 [ext_resource type="Script" path="res://scenes/door/door.gd" id="1_3ewmh"]
-[ext_resource type="AnimationLibrary" uid="uid://bpirry2gu3h3p" path="res://scenes/door/door_animations.res" id="2_ke6b2"]
-[ext_resource type="AudioStream" uid="uid://dd2eixmanplyx" path="res://sounds/door/doorhingecreak.wav" id="3_56kf7"]
+[ext_resource type="AudioStream" uid="uid://bgu5n7vpkahk2" path="res://sounds/door/doorunlocksound1.wav" id="3_lba2o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3lhg"]
 size = Vector3(1.5, 2, 0.25)
@@ -20,17 +19,12 @@ axis_lock_angular_z = true
 script = ExtResource("1_3ewmh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_r3lhg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_u6djd")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"door_animations": ExtResource("2_ke6b2")
-}
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_56kf7")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lba2o")

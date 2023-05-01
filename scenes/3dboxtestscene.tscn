@@ -1,22 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://qfwd00wxp2x7"]
+[gd_scene load_steps=12 format=3 uid="uid://qfwd00wxp2x7"]
 
 [ext_resource type="PackedScene" path="res://scenes/menus_and_gui/gui.tscn" id="1_fymrw"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_kwmte"]
 [ext_resource type="Material" uid="uid://b2d5x4dh631hd" path="res://materials/floor_boards.tres" id="2_d0yqh"]
-[ext_resource type="Texture2D" uid="uid://ca5w8op6ugdrr" path="res://textures/metal_panel_transparent.png" id="2_m0gxx"]
+[ext_resource type="Material" uid="uid://bpejkitbxxl5u" path="res://materials/shelf.tres" id="3_x15k8"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="5_csvti"]
 [ext_resource type="PackedScene" uid="uid://c64joyn10htby" path="res://scenes/environment/world_environment.tscn" id="5_ctiwa"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="7_kt8sk"]
 [ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="8_7rtt7"]
 [ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="10_k8ppx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxwog"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_m0gxx")
-uv1_triplanar = true
-texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyoj5"]
 albedo_color = Color(0.368627, 0.235294, 0.247059, 1)
@@ -43,7 +35,7 @@ material = ExtResource("2_d0yqh")
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32592, 1.8126, -3.89699)
 size = Vector3(10.7796, 0.175193, 3.78373)
-material = SubResource("StandardMaterial3D_fxwog")
+material = ExtResource("3_x15k8")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18912, -5.56301)
