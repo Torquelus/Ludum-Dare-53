@@ -40,6 +40,34 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
 text = "Quit"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.721569, 0.560784, 0.372549, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -467.0
+offset_top = 89.0
+offset_right = -153.0
+offset_bottom = 125.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "The Curse of Sentience as a Delivery Box"
+autowrap_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

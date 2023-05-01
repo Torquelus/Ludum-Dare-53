@@ -26,5 +26,6 @@ func _on_h_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(0,db_to_linear(value-40))
 	if($AudioStreamPlayer.playing==false):
 		$AudioStreamPlayer.play()
+	
 
 
