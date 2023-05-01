@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0ry4a03q0s4f"]
+[gd_scene load_steps=15 format=3 uid="uid://qfwd00wxp2x7"]
 
 [ext_resource type="PackedScene" path="res://scenes/menus_and_gui/gui.tscn" id="1_fymrw"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_kwmte"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c64joyn10htby" path="res://scenes/environment/world_environment.tscn" id="5_ctiwa"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="7_kt8sk"]
 [ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="8_7rtt7"]
+[ext_resource type="PackedScene" uid="uid://bm40plhn37skn" path="res://scenes/door/door.tscn" id="10_k8ppx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxwog"]
 transparency = 2
@@ -89,3 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.441494, 2)
 
 [node name="Lever" parent="." instance=ExtResource("8_7rtt7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68521, -0.520195, 0.587106)
+
+[node name="Door" parent="." instance=ExtResource("10_k8ppx")]
+transform = Transform3D(-0.063226, 0, -0.997999, 0, 1, 0, 0.997999, 0, -0.063226, 13.6209, 0, 0)
+lock_rotation = false

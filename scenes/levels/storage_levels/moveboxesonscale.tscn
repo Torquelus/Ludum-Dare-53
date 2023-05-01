@@ -7,28 +7,21 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5dfth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52156, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 11.7447, 5.75348, 10.6418)
+transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 19.168, 5.75348, 10.6418)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.21241, 0)
-size = Vector3(20.4259, 1, 11.444)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85165, -1.21241, 0)
+size = Vector3(6.61838, 1, 11.444)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0357, -1.17448, -0.0292988)
-size = Vector3(20.4259, 1, 11.444)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69341, -0.18866, 0)
-size = Vector3(2.27781, 1.12554, 4.17471)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9682, -3.02242, 0)
-size = Vector3(3.56216, 1.12554, 11.0886)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9344, -1.17448, -0.0292988)
+size = Vector3(8.24434, 1, 11.444)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
@@ -40,61 +33,63 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1.19305, 0)
 [node name="Boxes" type="Node" parent="."]
 
 [node name="boxes@box5" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61569, 0, -1.61457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.039, 0, -1.61457)
 
 [node name="boxes@box6" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61569, 0, -3.00345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.039, 0, -3.00345)
 
 [node name="boxes@box7" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61569, 0, -4.40984)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.039, 0, -4.40984)
 
 [node name="boxes@box2" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62585, 0.0132387, 1.21063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0492, 0.0132387, 1.21063)
 
 [node name="boxes@box3" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62585, 0.0132387, 2.97139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0492, 0.0132387, 2.97139)
 
 [node name="boxes@box4" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62585, 0.0132387, 4.53719)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0492, 0.0132387, 4.53719)
 
 [node name="boxes@box8" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30831, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7316, 0, 0)
 
 [node name="boxes@box9" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30831, 0, -1.61457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7316, 0, -1.61457)
 
 [node name="boxes@box10" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30831, 0, -3.00345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7316, 0, -3.00345)
 
 [node name="boxes@box11" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30831, 0, -4.40984)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7316, 0, -4.40984)
 
 [node name="boxes@box12" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.31847, 0.0132387, 1.21063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7418, 0.0132387, 1.21063)
 
 [node name="boxes@box13" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.31847, 0.0132387, 2.97139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7418, 0.0132387, 2.97139)
 
 [node name="boxes@box14" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.31847, 0.0132387, 4.53719)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7418, 0.0132387, 4.53719)
 
 [node name="boxes@box15" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39041, 1.70889, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8137, 1.70889, 0)
 
 [node name="boxes@box16" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39041, 1.70889, -1.61457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8137, 1.70889, -1.61457)
 
 [node name="boxes@box17" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39041, 1.70889, -3.00345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8137, 1.70889, -3.00345)
 
 [node name="boxes@box18" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39041, 1.70889, -4.40984)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8137, 1.70889, -4.40984)
 
 [node name="boxes@box19" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40057, 1.72213, 1.21063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8239, 1.72213, 1.21063)
 
 [node name="boxes@box20" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40057, 1.72213, 2.97139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8239, 1.72213, 2.97139)
 
 [node name="boxes@box21" parent="Boxes" instance=ExtResource("2_uaaij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40057, 1.72213, 4.53719)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8239, 1.72213, 4.53719)
+
+[connection signal="label_side" from="Player" to="scale" method="_on_player_label_side"]

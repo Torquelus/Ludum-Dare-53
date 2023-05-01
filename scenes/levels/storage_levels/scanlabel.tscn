@@ -27,3 +27,5 @@ shadow_enabled = true
 
 [node name="Scanner" parent="." instance=ExtResource("2_gaj77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4191, -0.955939, 0.114705)
+
+[connection signal="label_side" from="Player" to="Scanner" method="_on_player_label_side"]
