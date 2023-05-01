@@ -15,7 +15,8 @@ signal label_side
 @export var jump_force = 600.0
 ## Amount needed to trigger audio sound effects
 @export var min_velocity = 5
-
+## Height that player should not reach (death floor)
+@export var death_floor = -30
 
 ## Direction to apply movement force in.
 var _force_dir: Vector3 = Vector3.ZERO
@@ -61,6 +62,12 @@ func _physics_process(_delta):
 				$Player_Sounds.stop()
 			else:
 				$Player_Sounds.volume_db =$Player_Sounds.volume_db - 0.2
+			
+	# This is how we reset if we go too far
+	if (player_box_rigidbody.position.y < death_floor):
+		get_tree().reload_current_scene()
+
+
 	
 	raycast.global_rotation = Vector3.ZERO
 	if raycast.is_colliding():
