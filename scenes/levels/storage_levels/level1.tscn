@@ -9,7 +9,7 @@
 [node name="ground_wood" parent="." instance=ExtResource("1_n1jov")]
 
 [node name="Player" parent="." instance=ExtResource("2_fi1fh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81282, -3.12301)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11768, -0.205765)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)
