@@ -1,15 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf1l76jvbptns"]
 
 [ext_resource type="Script" path="res://scenes/platform/platform.gd" id="1_6dksa"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxwf2"]
-albedo_color = Color(0.827451, 0.945098, 0.992157, 1)
-metallic = 0.67
-metallic_specular = 0.42
-roughness = 0.54
+[ext_resource type="Material" uid="uid://bpejkitbxxl5u" path="res://materials/shelf.tres" id="2_cusmh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rvvha"]
-material = SubResource("StandardMaterial3D_yxwf2")
+material = ExtResource("2_cusmh")
 size = Vector3(2, 0.5, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mgd2w"]
