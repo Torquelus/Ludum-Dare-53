@@ -12,5 +12,8 @@ texture_filter = 0
 
 [node name="CSGBox3D2" type="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32592, 1.8126, -3.89699)
+use_collision = true
+collision_layer = 9
+collision_mask = 9
 size = Vector3(10.7796, 0.175193, 3.78373)
 material = SubResource("StandardMaterial3D_fxwog")
