@@ -8,7 +8,8 @@ var dialog_fadeout_delay = 0.2
 
 #func _ready():
 	#show basic controls, use \n to force newline
-	#textToAdd = "Narrator: To move around, use WASD or the Arrow Keys. You can also use SPACE to jump."
+	#Dialogue.create_dialog("Narrator: To move around, use WASD or the Arrow Keys. You can also use SPACE to jump.")
+	
 func create_dialog(textToAdd):
 	print_text(textToAdd)
 	dialog_visible = true

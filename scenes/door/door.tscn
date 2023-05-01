@@ -1,7 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbqk87si48bwp"]
 
 [ext_resource type="Script" path="res://scenes/door/door.gd" id="1_3ewmh"]
-[ext_resource type="AudioStream" uid="uid://dd2eixmanplyx" path="res://sounds/door/doorhingecreak.wav" id="2_crad2"]
+[ext_resource type="AudioStream" uid="uid://dd2eixmanplyx" path="res://sounds/doorhingecreak.wav" id="3_56kf7"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3lhg"]
 size = Vector3(1.5, 2, 0.25)
@@ -61,10 +62,6 @@ shape = SubResource("BoxShape3D_r3lhg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0)
 mesh = SubResource("BoxMesh_u6djd")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6lval")
-}
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_crad2")
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_56kf7")

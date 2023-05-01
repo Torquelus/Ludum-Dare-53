@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://geob7sopkvo8"]
 
-[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_43pnp"]
-[ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_noevp"]
+[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_s33ch"]
+[ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_2fmov"]
 
 [node name="Node3D2" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_43pnp")]
+[node name="Player" parent="." instance=ExtResource("1_s33ch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65137, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -18,9 +18,13 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.21241, 0)
 size = Vector3(3.88897, 1, 4.69701)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7287, -1.21241, 3.34578)
+size = Vector3(10.1516, 1, 6.82864)
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42369, 2.55583, -14.9169)
-size = Vector3(1.23734, 12.3477, 33.991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42369, 2.55583, -5.49257)
+size = Vector3(1.23734, 12.3477, 56.2286)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
@@ -28,5 +32,38 @@ shadow_enabled = true
 
 [node name="Boxes" type="Node" parent="."]
 
-[node name="Conveyor" parent="." instance=ExtResource("2_noevp")]
+[node name="Conveyor" parent="." instance=ExtResource("2_2fmov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115441, 0, -10.4962)
+enable = true
+conveyer_direction = Vector3(0, 0, 1)
+conveyor_strength = 2
+
+[node name="Conveyor2" parent="." instance=ExtResource("2_2fmov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115441, 0, -27.4962)
+enable = true
+conveyer_direction = Vector3(0, 0, 1)
+conveyor_strength = 4
+
+[node name="Conveyor5" parent="." instance=ExtResource("2_2fmov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9265, 0, -10.4962)
+enable = true
+conveyer_direction = Vector3(0, 0, 1)
+conveyor_strength = 2
+
+[node name="Conveyor6" parent="." instance=ExtResource("2_2fmov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9265, 0, -27.4962)
+enable = true
+conveyer_direction = Vector3(0, 0, 1)
+conveyor_strength = 4
+
+[node name="Conveyor3" parent="." instance=ExtResource("2_2fmov")]
+transform = Transform3D(0.00980858, 0, 0.999952, 0, 1, 0, -0.999952, 0, 0.00980858, 2.81252, 0, -37.8984)
+enable = true
+conveyer_direction = Vector3(0, 0, 1)
+conveyor_strength = 4
+
+[node name="Conveyor4" parent="." instance=ExtResource("2_2fmov")]
+transform = Transform3D(-0.0197208, 0, -0.999806, 0, 1, 0, 0.999806, 0, -0.0197208, 16.6979, 0, -38.0719)
+enable = true
+conveyer_direction = Vector3(0, 0, 1)
+conveyor_strength = 4
