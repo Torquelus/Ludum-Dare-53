@@ -18,11 +18,15 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
+	if pushed == false:
+		$AudioStreamPlayer1.play(0.2)
 	pushed = true
 	lever_anim.play("lever_pushed")
+	
 
 
 func _on_animation_player_animation_finished(anim_name):
 	if pushed == true:
 		lever_pushed.emit()
+		await $AudioStreamPlayer1.finished
 		process_mode = Node.PROCESS_MODE_DISABLED
