@@ -3,6 +3,7 @@ extends Node3D
 
 
 signal button_pushed
+signal button_unpushed
 
 @export var target:Node
 @export var button_colour_unpressed: Color = Color("c83330")
@@ -41,6 +42,7 @@ func _ready():
 	
 	if target:
 		button_pushed.connect(target.enable_process)
+		button_pushed.connect(target.disable_process)
 		
 
 func _on_area_3d_body_entered(body):
@@ -54,7 +56,7 @@ func _on_area_3d_body_exited(body):
 	create_tween().tween_property(button_light, "light_color", button_colour_unpressed, 0.2)
 	
 	pushed = false
-	
+	button_unpushed.emit()
 	button_anim.play_backwards("button_pushed")
 	
 
