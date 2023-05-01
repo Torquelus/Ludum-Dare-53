@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://c2ueoe42g3q1n"]
+[gd_scene load_steps=4 format=3 uid="uid://c2ueoe42g3q1n"]
+
+[ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="1_n1jov"]
+[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="2_fi1fh"]
+[ext_resource type="Script" path="res://scenes/light_swing.gd" id="3_50nuv"]
 
 [node name="level1" type="Node3D"]
+
+[node name="ground_wood" parent="." instance=ExtResource("1_n1jov")]
+
+[node name="Player" parent="." instance=ExtResource("2_fi1fh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81282, -3.12301)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 0, 2.8226, 3.93983)
+current = true
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557078, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -0.116931, 0.99314, 0, -0.99314, -0.116931, -0.795463, 4.67405, -1.7224)
+light_energy = 10.752
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_transmittance_bias = 0.373
+spot_range = 9.333
+script = ExtResource("3_50nuv")

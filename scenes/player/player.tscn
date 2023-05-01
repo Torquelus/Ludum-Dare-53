@@ -42,12 +42,6 @@ shape = SubResource("BoxShape3D_bxfwp")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.45)
 shape = SubResource("BoxShape3D_bxfwp")
 
-[node name="Area3D" type="Area3D" parent="Box/FrontCollider"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/FrontCollider/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0470126, -2.05499e-09)
-shape = SubResource("BoxShape3D_3sgi1")
-
 [node name="BackCollider" type="CollisionShape3D" parent="Box"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.45)
 shape = SubResource("BoxShape3D_bxfwp")
@@ -62,6 +56,13 @@ shape = SubResource("BoxShape3D_bxfwp")
 
 [node name="BoxMesh" parent="Box" instance=ExtResource("2_whaew")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.42456)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0470126, -2.05499e-09)
+shape = SubResource("BoxShape3D_3sgi1")
 
 [node name="PlayerBall" type="RigidBody3D" parent="."]
 collision_layer = 4
@@ -84,4 +85,4 @@ stream = ExtResource("5_ovoa2")
 [node name="Jump_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_flgjv")
 
-[connection signal="body_entered" from="Box/FrontCollider/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Box/Area3D" to="." method="_on_area_3d_body_entered"]
