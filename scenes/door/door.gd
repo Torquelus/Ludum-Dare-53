@@ -26,7 +26,7 @@ func _process(delta):
 	pass		
 
 func enable_process():
-	door_anim.play("door_opened")
+	door_anim.play("door_animations/door_opened")
 
 func disable_process():
-	door_anim.play_backwards("door_opened")
+	door_anim.play_backwards("door_animations/door_opened")

@@ -85,7 +85,7 @@ omni_attenuation = 2.0
 
 [node name="Area3D" type="Area3D" parent="ButtonPushable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0992836, 0)
-collision_mask = 2
+collision_mask = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonPushable/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0396838, 0)

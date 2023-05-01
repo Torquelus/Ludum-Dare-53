@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc0qxin1ug52r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wipx3"]
+size = Vector3(20, 10, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6c3u"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iljx6"]
+material = SubResource("StandardMaterial3D_a6c3u")
+size = Vector3(20, 1, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rkbqo"]
+material = SubResource("StandardMaterial3D_a6c3u")
+size = Vector3(1, 10, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hsksj"]
+material = SubResource("StandardMaterial3D_a6c3u")
+size = Vector3(1, 10, 3)
+
+[node name="ForegroundBarrier" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76139, 2.02495, 5.51142)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.89923, 0)
+shape = SubResource("BoxShape3D_wipx3")
+
+[node name="BlackVoidFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1)
+mesh = SubResource("BoxMesh_iljx6")
+
+[node name="BlackVoidWallLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 1)
+mesh = SubResource("BoxMesh_rkbqo")
+
+[node name="BlackVoidWallRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 1)
+mesh = SubResource("BoxMesh_hsksj")
