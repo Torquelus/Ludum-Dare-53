@@ -42,7 +42,7 @@ func _ready():
 	
 	if target:
 		button_pushed.connect(target.enable_process)
-		button_pushed.connect(target.disable_process)
+		button_unpushed.connect(target.disable_process)
 		
 
 func _on_area_3d_body_entered(body):
@@ -59,6 +59,8 @@ func _on_area_3d_body_exited(body):
 	pushed = false
 	button_unpushed.emit()
 	button_anim.play_backwards("button_pushed")
+	
+	pushed = false
 	
 
 func _on_animation_player_animation_finished(anim_name):

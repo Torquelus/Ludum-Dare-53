@@ -8,10 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://c4t2u7xbg1gi3" path="res://sounds/boxdrop3.wav" id="6_flgjv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bxfwp"]
-size = Vector3(1, 0.1, 1)
+size = Vector3(1, 0.2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3sgi1"]
-size = Vector3(0.324613, 0.2, 0.248163)
+size = Vector3(1, 0.2, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iynq1"]
 radius = 0.25
@@ -31,38 +31,37 @@ max_contacts_reported = 2
 contact_monitor = true
 
 [node name="TopCollider" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 shape = SubResource("BoxShape3D_bxfwp")
 
 [node name="BottomCollider" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 shape = SubResource("BoxShape3D_bxfwp")
 
-[node name="FrontCollider" type="CollisionShape3D" parent="Box" groups=["label_side"]]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.45)
+[node name="FrontCollider" type="CollisionShape3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.4)
 shape = SubResource("BoxShape3D_bxfwp")
 
 [node name="BackCollider" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.45)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.4)
 shape = SubResource("BoxShape3D_bxfwp")
 
 [node name="LeftCollider" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.45, 0, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.4, 0, 0)
 shape = SubResource("BoxShape3D_bxfwp")
 
 [node name="RightCollider" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.45, 0, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.4, 0, 0)
 shape = SubResource("BoxShape3D_bxfwp")
 
 [node name="BoxMesh" parent="Box" instance=ExtResource("2_whaew")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.742391)
-collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.42456)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128769, -0.256588, -0.176214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0470126, -2.05499e-09)
 shape = SubResource("BoxShape3D_3sgi1")
 
 [node name="RayCast3D" type="RayCast3D" parent="Box"]
@@ -80,7 +79,6 @@ mesh = SubResource("SphereMesh_fodau")
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 4)
-current = true
 script = ExtResource("4_vmdl1")
 
 [node name="Player_Sounds" type="AudioStreamPlayer" parent="."]

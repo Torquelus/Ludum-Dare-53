@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnqda7lk410gp" path="res://scenes/conveyor/conveyor.tscn" id="2_l1foq"]
 [ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="2_wf2yg"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="4_2y1s6"]
-[ext_resource type="PackedScene" uid="uid://bm40plhn37skn" path="res://scenes/door/door.tscn" id="5_sa714"]
+[ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="5_sa714"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -53,7 +53,7 @@ constant_linear_velocity = Vector3(0, 0, 2)
 conveyor_strength = 1
 
 [node name="Door" parent="." instance=ExtResource("5_sa714")]
-transform = Transform3D(-0.122008, 0, 0.992529, 0, 1, 0, -0.992529, 0, -0.122008, -5.25389, 0.190459, 1.38361)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25389, 0.190459, 1.38361)
 
 [node name="Player" parent="." instance=ExtResource("1_twa4a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5665, 0, 0)
