@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="1_n1jov"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="2_fi1fh"]
-[ext_resource type="Script" path="res://scenes/light_swing.gd" id="3_50nuv"]
+[ext_resource type="PackedScene" uid="uid://ci6xxxcmfky4x" path="res://scenes/environment/lighting.tscn" id="2_me1ac"]
 [ext_resource type="PackedScene" uid="uid://cfhkv1d0qr4vx" path="res://scenes/boxes/cardboard_box.tscn" id="4_x7g1u"]
 [ext_resource type="PackedScene" uid="uid://c64joyn10htby" path="res://scenes/environment/world_environment.tscn" id="5_0pu5y"]
 [ext_resource type="PackedScene" path="res://scenes/environment/foreground_barrier.tscn" id="6_hofi4"]
@@ -16,6 +16,7 @@
 
 [node name="Player" parent="." instance=ExtResource("2_fi1fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1398, 0.79314, -0.140094)
+
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -32,6 +33,7 @@ shadow_bias = 0.01
 shadow_transmittance_bias = 0.373
 spot_range = 9.333
 script = ExtResource("3_50nuv")
+
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("5_0pu5y")]
 

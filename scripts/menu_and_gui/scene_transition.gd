@@ -19,10 +19,13 @@ func transition_dissolve(target: String) -> void:
 	get_tree().change_scene_to_file(target)
 	$AnimationPlayer.play_backwards('dissolve_fast')
 
-#main menu to options and vice versa
+#main menu to options and all others
 func transition_dissolve_fast(target: String) -> void:
 	$AnimationPlayer.play("dissolve_fast")
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file(target)
 	$AnimationPlayer.play_backwards('dissolve_fast')
-
+	await $AnimationPlayer.animation_finished
+	if(get_tree().paused == true):
+		get_tree().paused=false
+		Dialogue.create_dialog("Well Done!")
