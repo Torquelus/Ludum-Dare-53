@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyeecypxaa4uc"]
+
+[ext_resource type="Texture2D" uid="uid://ca5w8op6ugdrr" path="res://textures/metal_panel_transparent.png" id="1_sbjb7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxwog"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_sbjb7")
+uv1_triplanar = true
+texture_filter = 0
+
+[node name="CSGBox3D2" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32592, 1.8126, -3.89699)
+size = Vector3(10.7796, 0.175193, 3.78373)
+material = SubResource("StandardMaterial3D_fxwog")

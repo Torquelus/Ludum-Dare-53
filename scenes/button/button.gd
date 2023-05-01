@@ -55,12 +55,13 @@ func _on_area_3d_body_exited(body):
 	create_tween().tween_property(button_material, "albedo_color", button_colour_unpressed, 0.2)
 	create_tween().tween_property(button_material, "emission", button_colour_unpressed, 0.2)
 	create_tween().tween_property(button_light, "light_color", button_colour_unpressed, 0.2)
+	
 	$AudioStreamPlayer2.play()
 	pushed = false
 	button_unpushed.emit()
 	button_anim.play_backwards("button_pushed")
-	
 	pushed = false
+	await $AudioStreamPlayer2.finished
 	
 
 func _on_animation_player_animation_finished(anim_name):
