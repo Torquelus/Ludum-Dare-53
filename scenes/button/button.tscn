@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/button/button.gd" id="1_gtd3p"]
 [ext_resource type="ArrayMesh" uid="uid://dpoys2qe4pdql" path="res://models/button/button_mesh.res" id="2_0bg3n"]
 [ext_resource type="ArrayMesh" uid="uid://1djhys0eiybo" path="res://models/button/button_case_mesh.res" id="2_ttlk6"]
-[ext_resource type="AudioStream" uid="uid://bwu1j5unawnyb" path="res://sounds/button/button_click.wav" id="4_m0ahk"]
-[ext_resource type="AudioStream" uid="uid://c6aocnqlj7f4e" path="res://sounds/button/button_unclick.wav" id="5_fq0rw"]
+[ext_resource type="AudioStream" uid="uid://cb1ckamr3qkeo" path="res://sounds/button/button_click.wav" id="4_m0ahk"]
+[ext_resource type="AudioStream" uid="uid://d3qxsoo7lyi7t" path="res://sounds/button/button_unclick.wav" id="5_fq0rw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_f0yu1"]
 height = 0.001

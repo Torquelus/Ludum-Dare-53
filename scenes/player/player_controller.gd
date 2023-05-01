@@ -42,6 +42,7 @@ func _input(event):
 	_force_dir = Vector3(input_dir.y, 0, input_dir.x)
 	
 	if _is_grounded and event.is_action_pressed("jump"):
+		$Jump_Sound.play(0.13)
 		player_ball_rigidbody.apply_force(jump_force * Vector3.UP, Vector3.ZERO)
 
 
@@ -67,17 +68,12 @@ func _physics_process(_delta):
 	if (player_box_rigidbody.position.y < death_floor):
 		get_tree().reload_current_scene()
 
-
-	
 	raycast.global_rotation = Vector3.ZERO
 	if raycast.is_colliding():
 		_is_grounded = true
 	else:
 		_is_grounded = false
 		
-	
-
 
 func _on_area_3d_body_entered(body):
 	label_side.emit()
-	print ("printing")
