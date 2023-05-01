@@ -4,10 +4,10 @@
 [ext_resource type="AudioStream" uid="uid://bgu5n7vpkahk2" path="res://sounds/door/doorunlocksound1.wav" id="3_lba2o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3lhg"]
-size = Vector3(1.5, 2, 0.25)
+size = Vector3(2, 2.5, 0.25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u6djd"]
-size = Vector3(1.5, 2, 0.25)
+size = Vector3(2, 2.5, 0.25)
 
 [node name="Door" type="StaticBody3D"]
 collision_mask = 3

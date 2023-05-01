@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=11 format=3 uid="uid://cnscnqqhlqw2w"]
+
 
 [ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="1_n1jov"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="2_fi1fh"]
@@ -9,14 +11,32 @@
 [ext_resource type="PackedScene" uid="uid://bl0nxec2a2aqa" path="res://scenes/environment/wall_panel.tscn" id="6_sxe38"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="7_16cld"]
 [ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="8_q1a4l"]
-[ext_resource type="PackedScene" path="res://scenes/environment/door_frame.tscn" id="10_nq8l8"]
+[ext_resource type="PackedScene" uid="uid://c83sbvfajdm64" path="res://scenes/environment/door_frame.tscn" id="10_nq8l8"]
+[ext_resource type="PackedScene" path="res://scenes/end_zone.tscn" id="11_k0tmu"]
+
 
 [node name="level1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fi1fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1398, 0.79314, -0.140094)
 
-[node name="Lighting" parent="." instance=ExtResource("2_me1ac")]
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557078, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -0.116931, 0.99314, 0, -0.99314, -0.116931, -8.94413, 4.67405, -1.7224)
+light_energy = 10.752
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_transmittance_bias = 0.373
+spot_range = 9.333
+script = ExtResource("3_50nuv")
+
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("5_0pu5y")]
 
@@ -162,13 +182,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 [node name="ForegroundBarrier" parent="Environment" instance=ExtResource("6_hofi4")]
 
 [node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_16cld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30405, 0.134382, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6589, 0.134382, -3.72518)
 collision_mask = 3
 target = NodePath("../Node/Door")
 
 [node name="Node" type="Node" parent="."]
 
 [node name="Door" parent="Node" instance=ExtResource("8_q1a4l")]
-transform = Transform3D(-0.0495884, -0.0337831, 0.998198, -0.00167621, 0.999429, 0.0337415, -0.998768, 0, -0.0496167, 1.80249, 0.353666, 0.449099)
+transform = Transform3D(-0.0495884, -0.0337831, 0.998198, -0.00167621, 0.999429, 0.0337415, -0.998768, 0, -0.0496167, -2.2316, 0.353666, 0.447816)
 
-[node name="StaticBody3D" parent="Node" instance=ExtResource("10_nq8l8")]
+[node name="DoorFrame" parent="Node" instance=ExtResource("10_nq8l8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00836, 5.48172, -2.46237)
+
+[node name="EndZone" parent="." instance=ExtResource("11_k0tmu")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.25416, 1.42602, 0.026031)
+
