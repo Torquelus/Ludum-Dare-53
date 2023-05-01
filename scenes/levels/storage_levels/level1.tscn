@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2ueoe42g3q1n"]
+[gd_scene load_steps=10 format=3 uid="uid://cnscnqqhlqw2w"]
 
 [ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="1_n1jov"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="2_fi1fh"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="3_50nuv"]
-[ext_resource type="PackedScene" uid="uid://q6p7rltojkmr" path="res://scenes/assets/box.tscn" id="4_m0xfu"]
+[ext_resource type="PackedScene" uid="uid://cfhkv1d0qr4vx" path="res://scenes/boxes/cardboard_box.tscn" id="4_x7g1u"]
 [ext_resource type="PackedScene" uid="uid://c64joyn10htby" path="res://scenes/environment/world_environment.tscn" id="5_0pu5y"]
+[ext_resource type="PackedScene" uid="uid://bc0qxin1ug52r" path="res://scenes/environment/foreground_barrier.tscn" id="6_hofi4"]
 [ext_resource type="PackedScene" uid="uid://bl0nxec2a2aqa" path="res://scenes/environment/wall_panel.tscn" id="6_sxe38"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="7_16cld"]
 [ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="8_q1a4l"]
@@ -12,11 +13,7 @@
 [node name="level1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fi1fh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60935, 0.679099, 1.2509)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, -0.817088, 2.8226, 3.93983)
-current = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1386, 0.790743, -0.133222)
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -34,69 +31,130 @@ shadow_transmittance_bias = 0.373
 spot_range = 9.333
 script = ExtResource("3_50nuv")
 
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -0.116931, 0.99314, 0, -0.99314, -0.116931, -10.1285, 5.5138, -0.317709)
+light_energy = 10.752
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_transmittance_bias = 0.373
+spot_range = 9.333
+script = ExtResource("3_50nuv")
+
 [node name="WorldEnvironment" parent="." instance=ExtResource("5_0pu5y")]
 
 [node name="Boxes" type="Node" parent="."]
 
-[node name="Box" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 1.48559, 0.753314, 0)
+[node name="CardboardBox1" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999997, 0, -0.00235614, 0, 1, 0, 0.00235614, 0, 0.999997, -11.4344, 0.909338, 0.0285251)
+mesh_type = 5
 
-[node name="Box2" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 2.49592, 0.753314, 0)
+[node name="CardboardBox2" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -10.1222, 0.909338, 1.03649)
+mesh_type = 5
 
-[node name="Box9" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 1.47023, 0.753314, -2.49788)
+[node name="CardboardBox3" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -8.82613, 0.909338, 0.0481223)
+mesh_type = 5
 
-[node name="Box10" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 1.46945, 0.753314, 1.08528)
+[node name="CardboardBox4" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -10.0219, 0.909338, -1.16176)
+mesh_type = 5
 
-[node name="Box11" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 0.313247, 0.753314, 1.08528)
+[node name="CardboardBox5" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -11.3955, 0.909338, -1.16176)
+mesh_type = 5
 
-[node name="Box12" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 0.313247, 0.753314, -0.136519)
+[node name="CardboardBox6" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -8.69833, 0.909338, -1.16176)
+mesh_type = 5
 
-[node name="Box13" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 0.313247, 0.753314, -1.34877)
+[node name="CardboardBox17" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.998015, 0, -0.0629646, 0, 1, 0, 0.0629646, 0, 0.998015, -10.0219, 1.98847, 0.968784)
+mesh_type = 5
 
-[node name="Box14" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 0.313247, 0.753314, -2.46267)
+[node name="CardboardBox18" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -11.3955, 1.98847, 0.968784)
+mesh_type = 5
 
-[node name="Box15" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 2.84992, 0.753314, -2.46267)
+[node name="CardboardBox19" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -8.69833, 1.98847, 0.968784)
+mesh_type = 5
 
-[node name="Box16" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 3.87987, 0.753314, -2.46267)
+[node name="CardboardBox20" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.975457, 0, 0.220187, 0, 1, 0, -0.220187, 0, 0.975457, -10.0219, 1.98847, -0.169578)
+mesh_type = 5
 
-[node name="Box17" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 3.87987, 0.753314, -1.31474)
+[node name="CardboardBox21" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -11.3955, 1.98847, -0.169578)
+mesh_type = 5
 
-[node name="Box18" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 3.87987, 0.753314, -0.184894)
+[node name="CardboardBox22" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -8.69833, 1.98847, -0.169578)
+mesh_type = 5
 
-[node name="Box19" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.998101, 0.061606, 0, -0.061606, 0.998101, 0, 0, 0, 1, 1.48334, 2.9343, -0.727287)
+[node name="CardboardBox23" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -10.0219, 1.98847, -1.47754)
+mesh_type = 5
 
-[node name="Box20" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 3.87987, 0.753314, 0.933384)
+[node name="CardboardBox24" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -11.3955, 1.98847, -1.47754)
+mesh_type = 5
 
-[node name="Box3" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 2.49592, 0.753314, -1.08425)
+[node name="CardboardBox25" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -8.69833, 1.98847, -1.47754)
+mesh_type = 5
 
-[node name="Box4" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 1.45005, 0.753314, -1.08425)
+[node name="CardboardBox26" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.979635, 0, -0.200787, 0, 1, 0, 0.200787, 0, 0.979635, -10.0219, 3.06233, -0.140846)
+mesh_type = 5
 
-[node name="Box5" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 1.45005, 1.83061, -1.08425)
+[node name="CardboardBox27" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -11.32, 3.03316, -0.161868)
+mesh_type = 5
 
-[node name="Box6" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 2.47558, 1.83061, -1.08425)
+[node name="CardboardBox28" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.992454, 0, 0.122614, 0, 1, 0, -0.122614, 0, 0.992454, -8.69833, 3.03316, -0.437698)
+mesh_type = 5
 
-[node name="Box7" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 2.47558, 1.83061, -0.0191287)
+[node name="CardboardBox14" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.999815, 0, -0.0191976, 0, 1, 0, 0.0191976, 0, -0.999815, -10.0219, 0.909338, -2.23139)
+mesh_type = 5
 
-[node name="Box8" parent="Boxes" instance=ExtResource("4_m0xfu")]
-transform = Transform3D(0.999517, 0.0310793, 0, -0.0310793, 0.999517, 0, 0, 0, 1, 1.3845, 1.83061, -0.0191287)
+[node name="CardboardBox15" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -11.3955, 0.909338, -2.23139)
+mesh_type = 5
+
+[node name="CardboardBox16" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -8.69833, 0.909338, -2.23139)
+mesh_type = 5
+
+[node name="CardboardBox7" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -8.78865, 0.909338, 1.09864)
+mesh_type = 5
+
+[node name="CardboardBox8" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.999828, 0, 0.0185169, 0, 1, 0, -0.0185169, 0, 0.999828, -11.4917, 0.909338, 1.09864)
+mesh_type = 5
+
+[node name="CardboardBox9" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.924685, 0, -0.380731, 0, 1, 0, 0.380731, 0, 0.924685, -10.98, 0.909338, 2.35421)
+mesh_type = 5
+
+[node name="CardboardBox10" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.879474, 0, 0.475946, 0, 1, 0, -0.475946, 0, 0.879474, -7.83769, 0.909338, 2.92938)
+mesh_type = 5
+
+[node name="CardboardBox11" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.879474, 0, 0.475946, 0, 1, 0, -0.475946, 0, 0.879474, -12.9256, 0.909338, 1.66922)
+mesh_type = 5
+
+[node name="CardboardBox12" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(0.215928, 0, -0.976409, 0, 1, 0, 0.976409, 0, 0.215928, -12.9068, 0.909338, 0.100393)
+mesh_type = 5
+
+[node name="CardboardBox13" parent="Boxes" instance=ExtResource("4_x7g1u")]
+transform = Transform3D(-0.173923, 0, -0.984759, 0, 1, 0, 0.984759, 0, -0.173923, -12.8031, 0.909338, -1.58485)
+mesh_type = 5
 
 [node name="Environment" type="Node" parent="."]
 
@@ -115,14 +173,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, -5)
 [node name="wall_red3" parent="Environment" instance=ExtResource("6_sxe38")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 5, 0)
 
+[node name="wall_red5" parent="Environment" instance=ExtResource("6_sxe38")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.4323, 5, 0)
+
 [node name="ground_wood" parent="Environment" instance=ExtResource("1_n1jov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 
 [node name="ground_wood3" parent="Environment" instance=ExtResource("1_n1jov")]
 
+[node name="ForegroundBarrier" parent="Environment" instance=ExtResource("6_hofi4")]
+
 [node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_16cld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30405, 0.134382, 0)
+collision_mask = 3
 target = NodePath("../Door")
 
 [node name="Door" parent="." instance=ExtResource("8_q1a4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30251, 1.33781, 0.883797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80249, 1.33781, 0.883797)
