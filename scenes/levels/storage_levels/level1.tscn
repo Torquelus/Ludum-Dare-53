@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="1_n1jov"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="2_fi1fh"]
-[ext_resource type="Script" path="res://scenes/light_swing.gd" id="3_50nuv"]
+[ext_resource type="PackedScene" uid="uid://ci6xxxcmfky4x" path="res://scenes/environment/lighting.tscn" id="2_me1ac"]
 [ext_resource type="PackedScene" uid="uid://cfhkv1d0qr4vx" path="res://scenes/boxes/cardboard_box.tscn" id="4_x7g1u"]
 [ext_resource type="PackedScene" uid="uid://c64joyn10htby" path="res://scenes/environment/world_environment.tscn" id="5_0pu5y"]
 [ext_resource type="PackedScene" uid="uid://bc0qxin1ug52r" path="res://scenes/environment/foreground_barrier.tscn" id="6_hofi4"]
@@ -17,30 +17,7 @@
 [node name="Player" parent="." instance=ExtResource("2_fi1fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1386, 0.790743, -0.133222)
 
-[node name="Lighting" type="Node" parent="."]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557078, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
-light_energy = 0.2
-shadow_enabled = true
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.116931, 0.99314, 0, -0.99314, -0.116931, -0.795463, 4.67405, -1.7224)
-light_energy = 10.752
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_transmittance_bias = 0.373
-spot_range = 9.333
-script = ExtResource("3_50nuv")
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.116931, 0.99314, 0, -0.99314, -0.116931, -10.1285, 5.5138, -0.317709)
-light_energy = 10.752
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_transmittance_bias = 0.373
-spot_range = 9.333
-script = ExtResource("3_50nuv")
+[node name="Lighting" parent="." instance=ExtResource("2_me1ac")]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("5_0pu5y")]
 

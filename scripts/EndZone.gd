@@ -14,4 +14,7 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("player") :
+		print_debug(str(Volume.GlobalLevelSelect[0]))
+		get_tree().paused = true
 		SceneTransition.change_scene(Volume.GlobalLevelSelect.pop_front())
+		

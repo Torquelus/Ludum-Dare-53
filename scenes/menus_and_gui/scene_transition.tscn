@@ -93,6 +93,7 @@ _data = {
 }
 
 [node name="scene_transition" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_20dop")
 
 [node name="dissolve_rect" type="ColorRect" parent="."]
