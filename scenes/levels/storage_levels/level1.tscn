@@ -177,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 [node name="ForegroundBarrier" parent="Environment" instance=ExtResource("6_hofi4")]
 
 [node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_16cld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6589, 0.134382, -3.72518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16964, 0.134382, 3.25787)
 collision_mask = 3
 target = NodePath("../Node/Door")
 
@@ -189,5 +189,8 @@ transform = Transform3D(-0.0495884, -0.0337831, 0.998198, -0.00167621, 0.999429,
 [node name="DoorFrame" parent="Node" instance=ExtResource("10_nq8l8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00836, 5.48172, -2.46237)
 
+[node name="DoorFrame" parent="Node/DoorFrame" instance=ExtResource("10_nq8l8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7967, -0.0989676, 7.54169)
+
 [node name="EndZone" parent="." instance=ExtResource("11_k0tmu")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.25416, 1.42602, 0.026031)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.986276, 1.42602, 0.026031)
