@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bgu5n7vpkahk2"
-path="res://.godot/imported/doorunlocksound1.wav-6e132d789cb0f54c0612ccf585d5feff.sample"
+path="res://.godot/imported/doorunlocksound1.wav-5c175cb7771d4dbdb3b113c6349fb2d8.sample"
 
 [deps]
 
-source_file="res://sounds/doorunlocksound1.wav"
-dest_files=["res://.godot/imported/doorunlocksound1.wav-6e132d789cb0f54c0612ccf585d5feff.sample"]
+source_file="res://sounds/door/doorunlocksound1.wav"
+dest_files=["res://.godot/imported/doorunlocksound1.wav-5c175cb7771d4dbdb3b113c6349fb2d8.sample"]
 
 [params]
 

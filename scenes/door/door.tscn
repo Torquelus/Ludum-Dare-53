@@ -1,13 +1,56 @@
+
 [gd_scene load_steps=5 format=3 uid="uid://bm40plhn37skn"]
 
 [ext_resource type="Script" path="res://scenes/door/door.gd" id="1_3ewmh"]
 [ext_resource type="AudioStream" uid="uid://dd2eixmanplyx" path="res://sounds/doorhingecreak.wav" id="3_56kf7"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3lhg"]
 size = Vector3(1.5, 2, 0.25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u6djd"]
 size = Vector3(1.5, 2, 0.25)
+
+[sub_resource type="Animation" id="Animation_c77fk"]
+resource_name = "door_opened"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6lval"]
+_data = {
+"door_opened": SubResource("Animation_c77fk")
+}
 
 [node name="Door" type="RigidBody3D"]
 collision_mask = 3
@@ -28,6 +71,7 @@ shape = SubResource("BoxShape3D_r3lhg")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0)
 mesh = SubResource("BoxMesh_u6djd")
+
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_56kf7")

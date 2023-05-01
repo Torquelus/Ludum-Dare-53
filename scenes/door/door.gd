@@ -24,3 +24,6 @@ func _process(delta):
 		
 func enable_process():
 	lock_rotation = not lock_rotation
+
+func disable_process():
+	lock_rotation = not lock_rotation

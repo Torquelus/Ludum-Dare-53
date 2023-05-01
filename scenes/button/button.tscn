@@ -7,8 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://c6aocnqlj7f4e" path="res://sounds/button/button_unclick.wav" id="5_fq0rw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_f0yu1"]
-height = 0.182293
-radius = 0.501121
+height = 0.001
+radius = 0.001
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uuwvb"]
 height = 0.118071
