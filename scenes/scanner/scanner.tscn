@@ -22,7 +22,7 @@ material = ExtResource("1_m8o6h")
 data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mi3v5"]
-size = Vector3(0.961163, 0.2, 5)
+size = Vector3(0.961163, 0.2, 4.89618)
 
 [node name="Scanner" type="Node3D"]
 script = ExtResource("1_o3o7n")
@@ -71,11 +71,12 @@ mesh = SubResource("PrismMesh_bi527")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265652, 0)
 shape = SubResource("ConcavePolygonShape3D_yvxwo")
 
-[node name="Scan Area" type="Area3D" parent="."]
+[node name="Scan Area" type="Area3D" parent="." groups=["scanner"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.757099, 0)
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scan Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392309, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02236, 0)
 shape = SubResource("BoxShape3D_mi3v5")
 
 [connection signal="body_entered" from="Scan Area" to="." method="_on_scan_area_body_entered"]

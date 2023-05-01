@@ -7,6 +7,7 @@ size = Vector3(10, 0.5, 10)
 size = Vector3(10, 0.5, 10)
 
 [node name="ground_wood" type="StaticBody3D"]
+collision_mask = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_p4o1f")
