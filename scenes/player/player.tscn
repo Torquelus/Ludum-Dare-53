@@ -66,6 +66,7 @@ shape = SubResource("BoxShape3D_3sgi1")
 
 [node name="RayCast3D" type="RayCast3D" parent="Box"]
 target_position = Vector3(0, -0.8, 0)
+collision_mask = 9
 
 [node name="PlayerBall" type="RigidBody3D" parent="."]
 collision_layer = 4

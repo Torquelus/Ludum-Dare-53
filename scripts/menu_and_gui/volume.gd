@@ -3,4 +3,4 @@ class_name GlbVolumeClass
 extends Node
 
 var GlobalVolume = 50
-var GlobalLevelSelect = ["res://scenes/levels/storage_levels/level1.tscn", "res://scenes/levels/storage_levels/moveboxesonscale.tscn","res://scenes/levels/storage_levels/scanlabel.tscn"]
+var GlobalLevelSelect = ["res://scenes/levels/storage_levels/level1.tscn","res://scenes/levels/storage_levels/level2.tscn" ,"res://scenes/levels/storage_levels/moveboxesonscale.tscn","res://scenes/levels/storage_levels/scanlabel.tscn"]
