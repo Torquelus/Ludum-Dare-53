@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnscnqqhlqw2w"]
+[gd_scene load_steps=12 format=3 uid="uid://cnscnqqhlqw2w"]
 
 [ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="1_n1jov"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="2_fi1fh"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bl0nxec2a2aqa" path="res://scenes/environment/wall_panel.tscn" id="6_sxe38"]
 [ext_resource type="PackedScene" uid="uid://do5isyg8q1f" path="res://scenes/button/button.tscn" id="7_16cld"]
 [ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="8_q1a4l"]
+[ext_resource type="PackedScene" uid="uid://dta8p7bdlx0gp" path="res://scenes/menus_and_gui/gui.tscn" id="10_yuhr3"]
+[ext_resource type="PackedScene" uid="uid://38kj2xtugm4i" path="res://scenes/end_zone.tscn" id="11_r6hho"]
 
 [node name="level1" type="Node3D"]
 
@@ -189,4 +191,9 @@ collision_mask = 3
 target = NodePath("../Door")
 
 [node name="Door" parent="." instance=ExtResource("8_q1a4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80249, 1.33781, 0.883797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80249, 1.33781, -4.68069)
+
+[node name="GUI" parent="." instance=ExtResource("10_yuhr3")]
+
+[node name="EndZone" parent="." instance=ExtResource("11_r6hho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53621, 1.1654, -5.09048)
