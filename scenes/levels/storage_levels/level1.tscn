@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnscnqqhlqw2w"]
+[gd_scene load_steps=13 format=3 uid="uid://cnscnqqhlqw2w"]
 
+[ext_resource type="Script" path="res://scenes/levels/storage_levels/level1.gd" id="1_b0enq"]
 [ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="1_n1jov"]
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="2_fi1fh"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="3_50nuv"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://38kj2xtugm4i" path="res://scenes/end_zone.tscn" id="11_k0tmu"]
 
 [node name="level1" type="Node3D"]
+script = ExtResource("1_b0enq")
 
 [node name="Player" parent="." instance=ExtResource("2_fi1fh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1398, 0.79314, -0.140094)

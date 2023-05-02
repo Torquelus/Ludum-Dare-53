@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://binx22relw7px"]
+
+[ext_resource type="Script" path="res://scenes/levels/storage_levels/level5.gd" id="1_f1eg6"]
+[ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_lqnaa"]
+[ext_resource type="PackedScene" uid="uid://pb1o6i5a6h05" path="res://scenes/scanner/scanner.tscn" id="2_72cpc"]
+[ext_resource type="Script" path="res://scenes/light_swing.gd" id="3_sqltb"]
+[ext_resource type="PackedScene" uid="uid://cfhkv1d0qr4vx" path="res://scenes/boxes/cardboard_box.tscn" id="4_xgwmr"]
+[ext_resource type="PackedScene" uid="uid://lgkdycvifj8t" path="res://scenes/environment/ground_wood.tscn" id="5_rsjlm"]
+[ext_resource type="PackedScene" uid="uid://bl0nxec2a2aqa" path="res://scenes/environment/wall_panel.tscn" id="6_h8xh8"]
+[ext_resource type="PackedScene" uid="uid://bc0qxin1ug52r" path="res://scenes/environment/foreground_barrier.tscn" id="7_y7hqb"]
+[ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="9_20658"]
+[ext_resource type="PackedScene" uid="uid://c83sbvfajdm64" path="res://scenes/environment/door_frame.tscn" id="10_hdd52"]
+[ext_resource type="PackedScene" uid="uid://38kj2xtugm4i" path="res://scenes/end_zone.tscn" id="11_h6w60"]
+
+[node name="Node3D2" type="Node3D"]
+script = ExtResource("1_f1eg6")
+
+[node name="Player" parent="." instance=ExtResource("1_lqnaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7204, 1.09048, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.823513, 0.567298, 0, -0.567298, 0.823513, 11.7447, 5.75348, 10.6418)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557079, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
+shadow_enabled = true
+
+[node name="Scanner" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_72cpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72244, 0.118675, 0.114705)
+target = NodePath("../Door")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557078, -0.798436, -0.335406, 0.500003, 0, 4.89652, 0)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.116931, 0.99314, 0, -0.99314, -0.116931, -8.94413, 4.67405, -1.7224)
+light_energy = 10.752
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_transmittance_bias = 0.373
+spot_range = 9.333
+script = ExtResource("3_sqltb")
+
+[node name="CardboardBox28" parent="." instance=ExtResource("4_xgwmr")]
+transform = Transform3D(0.992454, 0, 0.122614, 0, 1, 0, -0.122614, 0, 0.992454, -12.803, 1.57885, -3.82296)
+mesh_type = 5
+
+[node name="CardboardBox11" parent="." instance=ExtResource("4_xgwmr")]
+transform = Transform3D(0.879474, 0, 0.475946, 0, 1, 0, -0.475946, 0, 0.879474, -12.9256, 0.909338, 1.66922)
+mesh_type = 5
+
+[node name="ground_wood2" parent="." instance=ExtResource("5_rsjlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+
+[node name="wall_red4" parent="." instance=ExtResource("6_h8xh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -5)
+
+[node name="wall_red" parent="." instance=ExtResource("6_h8xh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
+
+[node name="wall_red2" parent="." instance=ExtResource("6_h8xh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, -5)
+
+[node name="wall_red3" parent="." instance=ExtResource("6_h8xh8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 5, 0)
+
+[node name="wall_red5" parent="." instance=ExtResource("6_h8xh8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.4323, 5, 0)
+
+[node name="ground_wood" parent="." instance=ExtResource("5_rsjlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="ground_wood3" parent="." instance=ExtResource("5_rsjlm")]
+
+[node name="ForegroundBarrier" parent="." instance=ExtResource("7_y7hqb")]
+
+[node name="Door" parent="." instance=ExtResource("9_20658")]
+transform = Transform3D(-0.0495884, -0.0337831, 0.998198, -0.00167621, 0.999429, 0.0337415, -0.998768, 0, -0.0496167, -2.2316, 0.353666, 0.447816)
+
+[node name="DoorFrame" parent="." instance=ExtResource("10_hdd52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00836, 5.48172, -2.46237)
+
+[node name="EndZone" parent="." instance=ExtResource("11_h6w60")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.25416, 1.42602, 0.026031)
+
+[connection signal="label_side" from="Player" to="Scanner" method="_on_player_label_side"]

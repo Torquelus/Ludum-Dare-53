@@ -16,7 +16,7 @@ func create_dialog(textToAdd):
 	set_dialog_visibility(true)
 
 func print_text(dialog_text):
-		
+	$VBoxContainer/Label.text = ""	
 	#create a timer to print text like a typewriter
 	var t = Timer.new()
 	t.set_wait_time(dialog_character_delay)
@@ -40,7 +40,7 @@ func print_text(dialog_text):
 	$AnimationPlayer.play_backwards('dialog_dissolve')
 	await $AnimationPlayer.animation_finished
 	set_dialog_visibility(false)
-	$VBoxContainer/Label.text = ""
+
 
 func set_dialog_visibility(visible):
 	$VBoxContainer.visible = visible
