@@ -24,6 +24,7 @@ func enable_process():
 
 func disable_process():
 	#door_anim.play_backwards("door_animations/door_opened")
-	var door_close_tween = create_tween()
-	door_close_tween.tween_property(self, "position:y", initial_position, 0.5).set_trans(Tween.TRANS_CUBIC)
-	$AudioStreamPlayer.play()
+	if(get_tree()!=null):
+		var door_close_tween = create_tween()
+		door_close_tween.tween_property(self, "position:y", initial_position, 0.5).set_trans(Tween.TRANS_CUBIC)
+		$AudioStreamPlayer.play()
