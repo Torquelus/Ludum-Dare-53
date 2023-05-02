@@ -28,4 +28,4 @@ func transition_dissolve_fast(target: String) -> void:
 	await $AnimationPlayer.animation_finished
 	if(get_tree().paused == true):
 		get_tree().paused=false
-		Dialogue.create_dialog("Well Done!")
+

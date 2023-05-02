@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0dkvgmdllmcp"]
+[gd_scene load_steps=12 format=3 uid="uid://d0qukqsntcmxa"]
 
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="1_i3mrc"]
+[ext_resource type="Script" path="res://scenes/levels/storage_levels/level4.gd" id="1_ykrb7"]
 [ext_resource type="PackedScene" uid="uid://duuijefn3p8qb" path="res://scenes/scale/scale.tscn" id="2_0osw0"]
 [ext_resource type="PackedScene" uid="uid://q6p7rltojkmr" path="res://scenes/boxes/player_box.tscn" id="3_1ekjt"]
 [ext_resource type="Script" path="res://scenes/light_swing.gd" id="4_u70s7"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://38kj2xtugm4i" path="res://scenes/end_zone.tscn" id="10_taw1i"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ykrb7")
 
 [node name="Player" parent="." instance=ExtResource("1_i3mrc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0545, 1.16541, 0)
@@ -57,7 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75821, 1.15134, 1.21063)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75821, 1.15134, 2.97139)
 
 [node name="boxes@box4" parent="Boxes" instance=ExtResource("3_1ekjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75821, 1.15134, 4.53719)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8021, 2.34198, -3.30141)
 
 [node name="boxes@box8" parent="Boxes" instance=ExtResource("3_1ekjt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07581, 1.1381, 0)
@@ -78,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06561, 1.15134, 1.21063)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06561, 1.15134, 2.97139)
 
 [node name="boxes@box14" parent="Boxes" instance=ExtResource("3_1ekjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06561, 1.15134, 4.53719)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8122, 1.15134, -3.31819)
 
 [node name="boxes@box15" parent="Boxes" instance=ExtResource("3_1ekjt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99371, 2.84699, 0)
@@ -95,11 +97,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99371, 2.84699, -4.40984)
 [node name="boxes@box19" parent="Boxes" instance=ExtResource("3_1ekjt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98351, 2.86023, 1.21063)
 
-[node name="boxes@box20" parent="Boxes" instance=ExtResource("3_1ekjt")]
+[node name="boxesbox20" parent="Boxes" instance=ExtResource("3_1ekjt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98351, 2.86023, 2.97139)
 
-[node name="boxes@box21" parent="Boxes" instance=ExtResource("3_1ekjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98351, 2.86023, 4.53719)
+[node name="boxesbox21" parent="Boxes" instance=ExtResource("3_1ekjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45532, 1.77904, -3.50861)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60208, -0.444791, 0.663069, 0, 0.83046, 0.557078, -0.798436, -0.335406, 0.500003, 4.43103, 4.89652, 0)
