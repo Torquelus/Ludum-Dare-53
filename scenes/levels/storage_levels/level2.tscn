@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://g3raflb6dab1"]
+[gd_scene load_steps=12 format=3 uid="uid://g3raflb6dab1"]
 
 [ext_resource type="PackedScene" uid="uid://d2vru48ambwho" path="res://scenes/lever/lever.tscn" id="1_oewvt"]
 [ext_resource type="PackedScene" uid="uid://bc0qxin1ug52r" path="res://scenes/environment/foreground_barrier.tscn" id="2_dsuyy"]
@@ -8,12 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://kumgvtb5d1o7" path="res://scenes/player/player.tscn" id="6_6no58"]
 [ext_resource type="PackedScene" uid="uid://dta8p7bdlx0gp" path="res://scenes/menus_and_gui/gui.tscn" id="6_exwd0"]
 [ext_resource type="PackedScene" uid="uid://38kj2xtugm4i" path="res://scenes/end_zone.tscn" id="7_c0eiw"]
+[ext_resource type="PackedScene" uid="uid://cbqk87si48bwp" path="res://scenes/door/door.tscn" id="7_h22bw"]
 [ext_resource type="PackedScene" uid="uid://ci6xxxcmfky4x" path="res://scenes/environment/lighting.tscn" id="8_682ck"]
+[ext_resource type="PackedScene" uid="uid://dyeecypxaa4uc" path="res://scenes/environment/metalshelf.tscn" id="10_cqh8b"]
 
 [node name="level2" type="Node3D"]
 
 [node name="Lever" parent="." instance=ExtResource("1_oewvt")]
-transform = Transform3D(-1, -8.74228e-08, 1.04251e-15, 0, 1.19249e-08, 1, -8.74228e-08, 1, -1.19249e-08, 54.4902, 10.3065, -4.73783)
+transform = Transform3D(-1, -8.74228e-08, 1.04251e-15, 0, 1.19249e-08, 1, -8.74228e-08, 1, -1.19249e-08, 49.2183, 4.09724, -4.73783)
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("5_xdrpj")]
 
@@ -26,6 +28,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77096, 2.69537, 2.09734)
 [node name="Lighting" parent="." instance=ExtResource("8_682ck")]
 
 [node name="GUI" parent="." instance=ExtResource("6_exwd0")]
+
+[node name="Door" parent="." instance=ExtResource("7_h22bw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1911, 0.422719, -4.44555)
 
 [node name="Environment2" type="Node" parent="."]
 
@@ -61,5 +66,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
 [node name="ground_wood8" parent="Environment2" instance=ExtResource("3_fe55n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
 
-[node name="ground_wood9" parent="Environment2" instance=ExtResource("3_fe55n")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 30, 2.0298, -10)
+[node name="CSGBox3D2" parent="Environment2" instance=ExtResource("10_cqh8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8592, 0.564921, -3.89699)
+layers = 9
+
+[node name="CSGBox3D3" parent="Environment2" instance=ExtResource("10_cqh8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4224, 1.21441, -3.89699)
+layers = 9
+size = Vector3(6.02659, 0.175193, 3.78373)
+
+[node name="CSGBox3D4" parent="Environment2" instance=ExtResource("10_cqh8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8532, 1.75956, -3.89699)
+layers = 9
+size = Vector3(6.02659, 0.175193, 3.78373)
+
+[node name="CSGBox3D5" parent="Environment2" instance=ExtResource("10_cqh8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4731, 2.46711, -3.89699)
+layers = 9
+size = Vector3(6.02659, 0.175193, 3.78373)
+
+[node name="CSGBox3D6" parent="Environment2" instance=ExtResource("10_cqh8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2635, 3.81346, -3.89699)
+layers = 9
+size = Vector3(6.02659, 0.175193, 3.78373)
+
+[node name="CSGBox3D7" parent="Environment2" instance=ExtResource("10_cqh8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.1865, 4.5, -3.897)
+layers = 9
+size = Vector3(6.02659, 0.175193, 3.78373)
