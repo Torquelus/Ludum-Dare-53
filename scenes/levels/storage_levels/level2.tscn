@@ -14,8 +14,9 @@
 
 [node name="level2" type="Node3D"]
 
-[node name="Lever" parent="." instance=ExtResource("1_oewvt")]
+[node name="Lever" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_oewvt")]
 transform = Transform3D(-1, -8.74228e-08, 1.04251e-15, 0, 1.19249e-08, 1, -8.74228e-08, 1, -1.19249e-08, 49.2183, 4.09724, -4.73783)
+target = NodePath("../Door")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("5_xdrpj")]
 
@@ -23,7 +24,7 @@ transform = Transform3D(-1, -8.74228e-08, 1.04251e-15, 0, 1.19249e-08, 1, -8.742
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.528557, 0.838008, 0)
 
 [node name="EndZone" parent="." instance=ExtResource("7_c0eiw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77096, 2.69537, 2.09734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4339, 1.17198, -5.1286)
 
 [node name="Lighting" parent="." instance=ExtResource("8_682ck")]
 
@@ -40,7 +41,7 @@ transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 1, 30, 10, -5)
 [node name="ground_wood" parent="Environment2" instance=ExtResource("3_fe55n")]
 
 [node name="ForegroundBarrier" parent="Environment2" instance=ExtResource("2_dsuyy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28983, 2.02495, 5.51142)
+transform = Transform3D(3.5, 0, 0, 0, 1, 0, 0, 0, 1, 29.6962, 2.02495, 5.51142)
 
 [node name="wall_red2" parent="Environment2" instance=ExtResource("4_v3667")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 5, 0)
@@ -94,3 +95,6 @@ size = Vector3(6.02659, 0.175193, 3.78373)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.1865, 4.5, -3.897)
 layers = 9
 size = Vector3(6.02659, 0.175193, 3.78373)
+
+[node name="wall_red3" parent="Environment2" instance=ExtResource("4_v3667")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 2, 0, -1, 0, -4.37114e-08, 65.0712, 9.94577, 0)
