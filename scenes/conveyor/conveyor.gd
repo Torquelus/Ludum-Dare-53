@@ -11,7 +11,7 @@ extends StaticBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	constant_linear_velocity = conveyer_direction*conveyor_strength
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,3 +26,5 @@ func enable_process():
 	elif disable == true:
 		constant_linear_velocity = Vector3.ZERO
 
+func disable_process():
+	pass

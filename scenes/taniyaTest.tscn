@@ -43,13 +43,13 @@ shadow_enabled = true
 transform = Transform3D(-0.02007, 0.999799, -1.16392e-10, -0.0589113, -0.00118259, 0.998263, 0.998061, 0.0200351, 0.0589231, -3.44803, 1.79886, -2.45589)
 target = NodePath("../Door")
 
-[node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_2y1s6")]
+[node name="Button" parent="." instance=ExtResource("4_2y1s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38274, -0.619024, -1.5019)
-target = NodePath("../Conveyor")
 
 [node name="Conveyor" parent="." instance=ExtResource("2_l1foq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59112, -0.165301, 0)
 constant_linear_velocity = Vector3(0, 0, 2)
+conveyer_direction = Vector3(0, 0, 1)
 conveyor_strength = 1
 
 [node name="Door" parent="." instance=ExtResource("5_sa714")]
@@ -57,3 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25389, 0.190459, 1.38361)
 
 [node name="Player" parent="." instance=ExtResource("1_twa4a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5665, 0, 0)
+
+[node name="Conveyor2" parent="." instance=ExtResource("2_l1foq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22678, 0, 0)
+conveyer_direction = Vector3(0, 0, 1)
