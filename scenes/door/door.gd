@@ -18,9 +18,10 @@ func _process(delta):
 
 func enable_process():
 	#door_anim.play("door_animations/door_opened")
-	var door_open_tween = create_tween()
-	door_open_tween.tween_property(self, "position:y", initial_position+door_height, 0.5).set_trans(Tween.TRANS_CUBIC)
-	$AudioStreamPlayer.play()
+	if(get_tree()!=null):
+		var door_open_tween = create_tween()
+		door_open_tween.tween_property(self, "position:y", initial_position+door_height, 0.5).set_trans(Tween.TRANS_CUBIC)
+		$AudioStreamPlayer.play()
 
 func disable_process():
 	#door_anim.play_backwards("door_animations/door_opened")
